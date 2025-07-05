@@ -1,27 +1,31 @@
 async function assignPositions(inputMembers) {
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
+  // ポジション・経験データ読み込み
   const positionsRes = await fetch(`data/${stage}/positions.json`);
   const positions = await positionsRes.json();
 
   const experienceRes = await fetch(`data/${stage}/experience.json`);
   const experienceData = await experienceRes.json();
 
+  // 初日メンバー一覧をSet化
   const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
+
+  // 経験者の出現回数マップ作成
   const allExperiencedMembers = Object.values(experienceData).flat();
   const experienceCountMap = {};
   allExperiencedMembers.forEach(name => {
     experienceCountMap[name] = (experienceCountMap[name] || 0) + 1;
   });
 
-  // 整合性チェック
+  // 🔍 整合性チェック：入力メンバーが初日・経験に存在するか確認
   for (const member of inputMembers) {
     if (!firstDayMembersSet.has(member) && !experienceCountMap[member]) {
       throw new Error(`データ整合性エラー: "${member}" は初日メンバーにも経験者にも存在しません。`);
     }
   }
 
-  // スコア付き候補リスト作成
+  // 🔢 各ポジションごとに、入力メンバーとスコアを割り出す
   const combinations = [];
   positions.forEach((pos, posIndex) => {
     const baseName = pos.firstDayMember;
@@ -33,10 +37,15 @@ async function assignPositions(inputMembers) {
       const isExperienced = experienced.includes(member);
       const totalExp = experienceCountMap[member] || 0;
 
+      // ①：完全な初日メンバーで他ポジ経験なし
       if (isFirstDay && totalExp === 0) {
         score = 100;
+
+      // ②：このポジション経験者で、他ポジ経験が1つだけ
       } else if (isExperienced && totalExp === 1) {
         score = 75;
+
+      // ③④：このポジションに関係あるが、他にも複数関与
       } else if (isFirstDay || isExperienced) {
         let relevantCount = 0;
         positions.forEach(p => {
@@ -45,6 +54,8 @@ async function assignPositions(inputMembers) {
           if (fn === member || exp.includes(member)) relevantCount++;
         });
         score = relevantCount === 1 ? 50 : 49;
+
+      // ⑤：どのポジションにも関与していない完全未経験
       } else {
         score = 25;
       }
@@ -59,13 +70,14 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // ① ② スコア100・75 の割り当て
+  // スコア順でソート
   combinations.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
     return a.memberIndex - b.memberIndex;
   });
 
+  // 🧩 スコア100・75の優先割り当て
   const usedPositions = new Set();
   const usedMembers = new Set();
   const assignmentMap = {};
@@ -82,33 +94,33 @@ async function assignPositions(inputMembers) {
     }
   }
 
-  // 🔍 スコア49・50のポジション候補抽出
+  // 🧮 スコア49・50の候補抽出
   const score50Combos = combinations.filter(
     c => (c.score === 50 || c.score === 49) &&
          !usedPositions.has(c.positionName) &&
          !usedMembers.has(c.member)
   );
 
-  // ポジションごとの候補をまとめる
+  // 🔁 ポジション→候補者マップ
   const posToCandidates = {};
   score50Combos.forEach(c => {
     if (!posToCandidates[c.positionName]) posToCandidates[c.positionName] = [];
     posToCandidates[c.positionName].push(c.member);
   });
 
-  // メンバーごとの該当ポジション数
+  // 🔁 候補者→該当ポジション数マップ
   const memberToPositions = {};
   score50Combos.forEach(c => {
     if (!memberToPositions[c.member]) memberToPositions[c.member] = new Set();
     memberToPositions[c.member].add(c.positionName);
   });
 
-  // 候補をできるだけ綺麗に割り当て
+  // 🧩 スコア49・50 割り当て（該当数が少ない順で）
   const assignedPos = new Set([...usedPositions]);
   const assignedMem = new Set([...usedMembers]);
 
   Object.entries(posToCandidates).forEach(([positionName, candidates]) => {
-    // 候補を該当ポジション数の少ない順にソート
+    // 候補を「関係ポジション数が少ない順」にソート
     candidates.sort((a, b) => {
       return (memberToPositions[a].size - memberToPositions[b].size);
     });
@@ -126,7 +138,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // 残り（スコア25など）を割り当て
+  // ⛳ 最後に残ったメンバー・ポジションに25以下で割り当て
   for (const combo of combinations) {
     if (!assignmentMap[combo.positionName] &&
         !assignedMem.has(combo.member) &&
@@ -139,7 +151,7 @@ async function assignPositions(inputMembers) {
     }
   }
 
-  // 最終形式に整えて返却
+  // 📦 出力整形
   return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
