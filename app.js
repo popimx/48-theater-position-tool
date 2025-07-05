@@ -44,11 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <tbody>
           ${positions.map(pos => {
             const assigned = positionMap[pos.name];
+            const member = assigned?.member || '―';
             const remark = assigned?.score === 25 ? '初' : '';
             return `
               <tr>
                 <td>${pos.name}</td>
-                <td>${assigned?.member || '―'}</td>
+                <td>${member}</td>
                 <td>${remark}</td>
               </tr>
             `;
