@@ -18,19 +18,30 @@ async function assignPositions(inputMembers) {
     nameCountMap[name] = (nameCountMap[name] || 0) + 1;
   });
 
-  // スコア計算関数
+  // スコア計算関数（修正済みロジック）
   function calcScore(positionName, memberName) {
     if (!memberName || memberName === '―') return 0;
-    const basePositionName = positionName.replace('ポジ', '');
-    if (basePositionName === memberName) return 100;
 
+    const basePositionName = positionName.replace('ポジ', '');
     const experienced = experienceData[basePositionName] || [];
-    if (experienced.includes(memberName)) {
-      const count = nameCountMap[memberName] || 0;
-      if (count === 1) return 75;
-      if (count >= 2) return 50;
+    const experienceCount = nameCountMap[memberName] || 0;
+
+    // ✅ 初日メンバーでも経験者に名前があれば 50 点
+    if (basePositionName === memberName && experienceCount >= 1) {
+      return 50;
     }
 
+    // ✅ 初日メンバー（経験なし）なら 100 点
+    if (basePositionName === memberName) {
+      return 100;
+    }
+
+    // ✅ 経験者なら 75 or 50 点
+    if (experienced.includes(memberName)) {
+      return experienceCount === 1 ? 75 : 50;
+    }
+
+    // ✅ 未経験者
     return 25;
   }
 
@@ -49,7 +60,7 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // スコア → ポジション優先 → 入力順 でソート
+  // スコア → ポジション順 → 入力順 に並べて割り当て
   combinations.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
