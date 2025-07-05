@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>劇場公演 ポジションツール</title>
+<link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>劇場公演 ポジションツール</h1>
+  </header>
+
+  <main>
+    <label for="member-input">出演メンバーを「・」区切りで入力してください：</label>
+    <textarea id="member-input" placeholder="例: 小栗有以・倉野尾成美・佐藤綺星..." rows="4"></textarea>
+
+    <button id="assign-btn">ポジション割り当て開始</button>
+
+    <section id="result" aria-live="polite" style="margin-top:20px;"></section>
+  </main>
+
+  <script src="./src/assign.js"></script>
+  <script src="./src/app.js"></script>
+</body>
+</html>
