@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // ポジション名 → メンバー のマッピング
       const positionMap = {};
       assignedPositions.forEach(({ positionName, member }) => {
-        positionMap[positionName] = member;
+        positionMap[positionName] = { member, score };
       });
 
       // テーブル作成
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <tbody>
           ${positions.map(pos =>
             const assigned = positionMap[pos.name];
-      const remark = assigned?.score === 20 ? '初' : '';
-      return `
+            const remark = assigned?.score === 20 ? '初' : '';
+            return `
             <tr>
               <td>${pos.name}</td>
               <td>${positionMap[pos.name] || '―'}</td>
