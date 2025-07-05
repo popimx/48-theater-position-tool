@@ -1,50 +1,46 @@
+// 割り当て関数
 async function assignPositions(inputMembers) {
-  // 初日ポジションデータ取得
+  // 初日ポジションデータを取得
   const positionsRes = await fetch('data/positions.json');
   const positions = await positionsRes.json();
 
-  // 経験者マップ（ポジション名 → 経験者配列）
+  // 経験者データを取得
   const experienceRes = await fetch('data/experience.json');
   const experienceData = await experienceRes.json();
 
-  // 全経験者名をフラット化して出現回数カウント
+  // 経験者全員の出現回数をカウント
   const experienceAllMembers = Object.values(experienceData).flat();
   const nameCountMap = {};
   experienceAllMembers.forEach(name => {
     nameCountMap[name] = (nameCountMap[name] || 0) + 1;
   });
 
-  // ポジションごとにメンバーのスコア計算用関数
+  // スコア計算関数
   function calcScore(positionName, memberName) {
-    if (!memberName) return 0;
+    if (!memberName || memberName === '―') return 0;
 
-    // 初日メンバーはスコア100
-    if (positionName === memberName + 'ポジ' || positionName.startsWith(memberName)) {
-      // positionName と memberName の対応は必要に応じ調整してください
-      if (positionName.replace('ポジ', '') === memberName) return 100;
-    }
+    const basePositionName = positionName.replace('ポジ', '');
 
-    // 経験者にいるか確認
-    const experienced = experienceData[positionName.replace('ポジ', '')] || [];
+    // 初日メンバーかどうか（ポジション名と同じ名前なら100点）
+    if (basePositionName === memberName) return 100;
+
+    // 経験者かどうか
+    const experienced = experienceData[basePositionName] || [];
     if (experienced.includes(memberName)) {
       const count = nameCountMap[memberName] || 0;
       if (count === 1) return 75;
       if (count >= 2) return 50;
     }
 
-    // 経験者にいなければ25
+    // 経験なしは25点
     return 25;
   }
 
-  // 割り当て結果の初期化
   const assigned = [];
-
-  // 使われたメンバーを記録（重複割り当て防止）
   const usedMembers = new Set();
 
-  // ポジションごとにメンバーのスコアを計算し、高い順に並べて割り当て
   for (const pos of positions) {
-    // そのポジションに最も高スコアをつけるメンバーを探す
+    // 割り当て候補をスコア順に並べる
     const candidates = inputMembers
       .filter(m => !usedMembers.has(m))
       .map(m => ({ member: m, score: calcScore(pos.name, m) }))
@@ -58,7 +54,7 @@ async function assignPositions(inputMembers) {
       });
       usedMembers.add(candidates[0].member);
     } else {
-      // 割り当てられるメンバーなし → 空白で割り当て
+      // 空き枠は「―」で割り当て
       assigned.push({
         positionName: pos.name,
         member: '―',
@@ -66,6 +62,9 @@ async function assignPositions(inputMembers) {
       });
     }
   }
+
+  // 入力メンバーがポジション数より多い場合は余りは割り当てなしで返す
+  // （必要ならここで別途処理可能）
 
   return assigned;
 }
