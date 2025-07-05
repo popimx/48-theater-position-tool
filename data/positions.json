@@ -1,0 +1,98 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "井澤美優ポジ",
+    "firstDayMember": "井澤美優",
+    "experiencedMembers": ["渋井美奈", "藤野心葉", "立花心良"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "市村愛里ポジ",
+    "firstDayMember": "市村愛里",
+    "experiencedMembers": ["渋井美奈", "井澤美優", "森﨑冴彩", "坂本愛玲菜"]
+  },
+  {
+    "positionId": "pos03",
+    "name": "伊藤優絵瑠ポジ",
+    "firstDayMember": "伊藤優絵瑠",
+    "experiencedMembers": ["渋井美奈", "福井可憐"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "猪原絆愛ポジ",
+    "firstDayMember": "猪原絆愛",
+    "experiencedMembers": ["生野莉奈", "中野南実", "松本苺花", "山川万里愛"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "今村麻莉愛ポジ",
+    "firstDayMember": "今村麻莉愛",
+    "experiencedMembers": ["石橋颯", "山内祐奈", "田中伊桜莉"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "川平聖ポジ",
+    "firstDayMember": "川平聖",
+    "experiencedMembers": ["石松結菜", "立花心良", "石川歩実優", "靏川那智"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "栗原紗英ポジ",
+    "firstDayMember": "栗原紗英",
+    "experiencedMembers": ["北川陽彩"]
+  },
+  {
+    "positionId": "pos08",
+    "name": "栗山梨奈ポジ",
+    "firstDayMember": "栗山梨奈",
+    "experiencedMembers": ["大内梨果", "長野らら", "松永悠良", "龍頭綺音"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "坂本りのポジ",
+    "firstDayMember": "坂本りの",
+    "experiencedMembers": ["井澤美優", "大庭凜咲", "安井妃奈", "川平聖"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "竹本くるみポジ",
+    "firstDayMember": "竹本くるみ",
+    "experiencedMembers": ["豊永阿紀", "猪原絆愛", "江口心々華"]
+  },
+  {
+    "positionId": "pos11",
+    "name": "田中伊桜莉ポジ",
+    "firstDayMember": "田中伊桜莉",
+    "experiencedMembers": ["安井妃奈", "猪島莉玲亜", "呉優菜", "吉田めい"]
+  },
+  {
+    "positionId": "pos12",
+    "name": "地頭江音々ポジ",
+    "firstDayMember": "地頭江音々",
+    "experiencedMembers": ["秋吉優花", "大庭凜咲", "伊藤優絵瑠"]
+  },
+  {
+    "positionId": "pos13",
+    "name": "渕上舞ポジ",
+    "firstDayMember": "渕上舞",
+    "experiencedMembers": ["生野莉奈", "石松結菜", "荒巻美咲"]
+  },
+  {
+    "positionId": "pos14",
+    "name": "森﨑冴彩ポジ",
+    "firstDayMember": "森﨑冴彩",
+    "experiencedMembers": ["藤野心葉", "石井彩音", "江浦優香", "片平紗麗"]
+  },
+  {
+    "positionId": "pos15",
+    "name": "梁瀬鈴雅ポジ",
+    "firstDayMember": "梁瀬鈴雅",
+    "experiencedMembers": ["坂本りの", "大庭凜咲", "栗山梨奈"]
+  },
+  {
+    "positionId": "pos16",
+    "name": "山内祐奈ポジ",
+    "firstDayMember": "山内祐奈",
+    "experiencedMembers": ["井澤美優", "大内梨果", "森﨑冴彩"]
+  }
+]
