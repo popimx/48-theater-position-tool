@@ -1,32 +1,33 @@
 async function assignPositions(inputMembers) {
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
-  // ポジション・経験データ読み込み
+  // 初期データ読み込み（ポジション & 経験者）
   const positionsRes = await fetch(`data/${stage}/positions.json`);
   const positions = await positionsRes.json();
 
   const experienceRes = await fetch(`data/${stage}/experience.json`);
   const experienceData = await experienceRes.json();
 
-  // 初日メンバー一覧をSet化
+  // 初日メンバー一覧（重複なしのSet）
   const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
 
-  // 経験者の出現回数マップ作成
+  // 経験者ごとの登場回数をカウント
   const allExperiencedMembers = Object.values(experienceData).flat();
   const experienceCountMap = {};
   allExperiencedMembers.forEach(name => {
     experienceCountMap[name] = (experienceCountMap[name] || 0) + 1;
   });
 
-  // 🔍 整合性チェック：入力メンバーが初日・経験に存在するか確認
+  // === 整合性チェック ===
   for (const member of inputMembers) {
     if (!firstDayMembersSet.has(member) && !experienceCountMap[member]) {
       throw new Error(`データ整合性エラー: "${member}" は初日メンバーにも経験者にも存在しません。`);
     }
   }
 
-  // 🔢 各ポジションごとに、入力メンバーとスコアを割り出す
+  // === スコア付き候補リスト作成 ===
   const combinations = [];
+
   positions.forEach((pos, posIndex) => {
     const baseName = pos.firstDayMember;
     const experienced = experienceData[baseName] || [];
@@ -37,16 +38,12 @@ async function assignPositions(inputMembers) {
       const isExperienced = experienced.includes(member);
       const totalExp = experienceCountMap[member] || 0;
 
-      // ①：完全な初日メンバーで他ポジ経験なし
       if (isFirstDay && totalExp === 0) {
-        score = 100;
-
-      // ②：このポジション経験者で、他ポジ経験が1つだけ
+        score = 100; // ① 完全初日
       } else if (isExperienced && totalExp === 1) {
-        score = 75;
-
-      // ③④：このポジションに関係あるが、他にも複数関与
+        score = 75;  // ② 経験者でその1回だけ
       } else if (isFirstDay || isExperienced) {
+        // ③ ④ 該当ポジションのみに登場 → 50、それ以上 → 49
         let relevantCount = 0;
         positions.forEach(p => {
           const fn = p.firstDayMember;
@@ -54,14 +51,13 @@ async function assignPositions(inputMembers) {
           if (fn === member || exp.includes(member)) relevantCount++;
         });
         score = relevantCount === 1 ? 50 : 49;
-
-      // ⑤：どのポジションにも関与していない完全未経験
       } else {
-        score = 25;
+        score = 25; // ⑤ 完全未経験
       }
 
       combinations.push({
         positionName: pos.name,
+        baseName,
         member,
         score,
         posIndex,
@@ -70,21 +66,21 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // スコア順でソート
+  // === ①② スコア100・75 優先で割り当て ===
   combinations.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
     return a.memberIndex - b.memberIndex;
   });
 
-  // 🧩 スコア100・75の優先割り当て
   const usedPositions = new Set();
   const usedMembers = new Set();
   const assignmentMap = {};
 
   for (const combo of combinations) {
     if ((combo.score === 100 || combo.score === 75) &&
-        !usedPositions.has(combo.positionName) && !usedMembers.has(combo.member)) {
+        !usedPositions.has(combo.positionName) &&
+        !usedMembers.has(combo.member)) {
       assignmentMap[combo.positionName] = {
         member: combo.member,
         score: combo.score
@@ -94,64 +90,77 @@ async function assignPositions(inputMembers) {
     }
   }
 
-  // 🧮 スコア49・50の候補抽出
+  // === 🔍 スコア49・50 の候補抽出（ポジション単位） ===
   const score50Combos = combinations.filter(
-    c => (c.score === 50 || c.score === 49) &&
+    c => (c.score === 49 || c.score === 50) &&
          !usedPositions.has(c.positionName) &&
          !usedMembers.has(c.member)
   );
 
-  // 🔁 ポジション→候補者マップ
+  // ポジションごとに候補を整理
   const posToCandidates = {};
   score50Combos.forEach(c => {
     if (!posToCandidates[c.positionName]) posToCandidates[c.positionName] = [];
-    posToCandidates[c.positionName].push(c.member);
+    posToCandidates[c.positionName].push(c);
   });
 
-  // 🔁 候補者→該当ポジション数マップ
+  // メンバーごとの該当ポジション数
   const memberToPositions = {};
   score50Combos.forEach(c => {
     if (!memberToPositions[c.member]) memberToPositions[c.member] = new Set();
     memberToPositions[c.member].add(c.positionName);
   });
 
-  // 🧩 スコア49・50 割り当て（該当数が少ない順で）
-  const assignedPos = new Set([...usedPositions]);
-  const assignedMem = new Set([...usedMembers]);
-
-  Object.entries(posToCandidates).forEach(([positionName, candidates]) => {
-    // 候補を「関係ポジション数が少ない順」にソート
+  // === ③④ 割り当て（経験者優先 → 該当ポジ数の少ない順） ===
+  for (const [positionName, candidates] of Object.entries(posToCandidates)) {
     candidates.sort((a, b) => {
-      return (memberToPositions[a].size - memberToPositions[b].size);
+      const aExp = (experienceData[a.baseName] || []).includes(a.member);
+      const bExp = (experienceData[b.baseName] || []).includes(b.member);
+
+      if (aExp !== bExp) return bExp - aExp; // 経験者を優先
+      return (memberToPositions[a.member].size - memberToPositions[b.member].size); // 少ない順
     });
 
     for (const candidate of candidates) {
-      if (!assignedMem.has(candidate) && !assignedPos.has(positionName)) {
+      if (!usedMembers.has(candidate.member)) {
         assignmentMap[positionName] = {
-          member: candidate,
-          score: 49
+          member: candidate.member,
+          score: candidate.score
         };
-        assignedMem.add(candidate);
-        assignedPos.add(positionName);
+        usedMembers.add(candidate.member);
+        usedPositions.add(positionName);
         break;
       }
     }
-  });
+  }
 
-  // ⛳ 最後に残ったメンバー・ポジションに25以下で割り当て
+  // === 🔍 最終チェック：経験者欄にないスコア49以上は無効化 ===
+  for (const [positionName, data] of Object.entries(assignmentMap)) {
+    if (data.score >= 49) {
+      const baseName = positions.find(p => p.name === positionName)?.firstDayMember;
+      const expList = experienceData[baseName] || [];
+      if (data.member !== baseName && !expList.includes(data.member)) {
+        delete assignmentMap[positionName]; // 削除
+        usedMembers.delete(data.member);
+        usedPositions.delete(positionName);
+      }
+    }
+  }
+
+  // === ⑤ スコア25以下の割り当て ===
   for (const combo of combinations) {
     if (!assignmentMap[combo.positionName] &&
-        !assignedMem.has(combo.member) &&
+        !usedMembers.has(combo.member) &&
         combo.score <= 49) {
       assignmentMap[combo.positionName] = {
         member: combo.member,
         score: combo.score
       };
-      assignedMem.add(combo.member);
+      usedMembers.add(combo.member);
     }
   }
 
-  // 📦 出力整形
+  // === 最終出力形式に整形して返す ===
   return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
