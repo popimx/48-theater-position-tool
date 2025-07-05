@@ -39,18 +39,33 @@ async function assignPositions(inputMembers) {
   const assigned = [];
   const usedMembers = new Set();
 
-  for (const pos of positions) {
-    // 割り当て候補をスコア順（同スコアなら入力順）で並べる
-    const candidates = inputMembers
-      .map((m, index) => ({
-        member: m,
-        score: calcScore(pos.name, m),
-        index
+  // 入力メンバーごとにスコアを事前計算
+  const memberScores = inputMembers.map((member, index) => {
+    return {
+      name: member,
+      index,
+      scores: positions.map(pos => ({
+        position: pos.name,
+        score: calcScore(pos.name, member)
       }))
-      .filter(c => !usedMembers.has(c.member))
+    };
+  });
+
+  for (const pos of positions) {
+    // このポジションに対して、未使用メンバーの中から最適な人を探す
+    const candidates = memberScores
+      .filter(m => !usedMembers.has(m.name))
+      .map(m => {
+        const posScore = m.scores.find(s => s.position === pos.name);
+        return {
+          member: m.name,
+          score: posScore ? posScore.score : 0,
+          index: m.index
+        };
+      })
       .sort((a, b) => {
         if (b.score !== a.score) return b.score - a.score;
-        return a.index - b.index;
+        return a.index - b.index; // 同スコアなら入力順
       });
 
     if (candidates.length > 0 && candidates[0].score > 0) {
