@@ -1,11 +1,14 @@
 // 割り当て関数
 async function assignPositions(inputMembers) {
+  // 公演の選択値を取得（デフォルト: kokokarada）
+  const stage = document.getElementById('stage-select')?.value || 'kokokarada';
+
   // 初日ポジションデータを取得
-  const positionsRes = await fetch('data/positions.json');
+  const positionsRes = await fetch(`data/${stage}/positions.json`);
   const positions = await positionsRes.json();
 
   // 経験者データを取得
-  const experienceRes = await fetch('data/experience.json');
+  const experienceRes = await fetch(`data/${stage}/experience.json`);
   const experienceData = await experienceRes.json();
 
   // 経験者全員の出現回数をカウント
