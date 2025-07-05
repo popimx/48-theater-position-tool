@@ -1,57 +1,91 @@
-// 割り当て関数
 async function assignPositions(inputMembers) {
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
-  // 初日ポジションデータを取得
   const positionsRes = await fetch(`data/${stage}/positions.json`);
   const positions = await positionsRes.json();
 
-  // 経験者データを取得
   const experienceRes = await fetch(`data/${stage}/experience.json`);
   const experienceData = await experienceRes.json();
 
-  // 経験者全員の出現回数をカウント
-  const experienceAllMembers = Object.values(experienceData).flat();
-  const nameCountMap = {};
-  experienceAllMembers.forEach(name => {
-    nameCountMap[name] = (nameCountMap[name] || 0) + 1;
+  // 全経験者出現カウント
+  const allExperiencedMembers = Object.values(experienceData).flat();
+  const experienceCountMap = {};
+  allExperiencedMembers.forEach(name => {
+    experienceCountMap[name] = (experienceCountMap[name] || 0) + 1;
   });
 
-  // スコア計算関数
-  function calcScore(positionName, memberName) {
-    if (!memberName || memberName === '―') return 0;
-    const basePositionName = positionName.replace('ポジ', '');
+  // ポジションごとに候補メンバーをスコアリング
+  const scoreMap = {}; // member -> { positions: [], score }
+  inputMembers.forEach(member => {
+    scoreMap[member] = { positions: [], score: 0 };
+  });
 
-    if (basePositionName === memberName) {
-      const count = nameCountMap[memberName] || 0;
-      return count >= 1 ? 50 : 100;
-    }
+  positions.forEach(pos => {
+    const baseName = pos.name.replace('ポジ', '');
+    inputMembers.forEach(member => {
+      const isFirstDay = baseName === member;
+      const isExperienced = (experienceData[baseName] || []).includes(member);
+      const totalExperienceCount = experienceCountMap[member] || 0;
 
-    const experienced = experienceData[basePositionName] || [];
-    if (experienced.includes(memberName)) {
-      const count = nameCountMap[memberName] || 0;
-      return count === 1 ? 75 : 50;
-    }
+      if (isFirstDay && totalExperienceCount === 0) {
+        scoreMap[member].positions.push({ positionName: pos.name, score: 100 });
+      } else if (totalExperienceCount === 1) {
+        scoreMap[member].positions.push({ positionName: pos.name, score: 75 });
+      } else {
+        scoreMap[member].positions.push({ positionName: pos.name, score: null }); // 一旦保留
+      }
+    });
+  });
 
-    return 25;
-  }
+  // 未スコア部分に③ルール適用（出現回数カウント）
+  const extraCount = {};
+  positions.forEach(pos => {
+    const baseName = pos.name.replace('ポジ', '');
+    inputMembers.forEach(member => {
+      const alreadyScored = scoreMap[member].positions.find(p => p.positionName === pos.name && p.score !== null);
+      if (alreadyScored) return;
 
-  // すべての組み合わせのスコアを生成
+      const allPositionsWhereOnlyThisMemberAppears = positions.filter(p => {
+        const names = inputMembers.filter(m => {
+          const exp = experienceData[p.name.replace('ポジ', '')] || [];
+          return (m === p.name.replace('ポジ', '') || exp.includes(m));
+        });
+        return names.includes(member);
+      });
+
+      extraCount[member] = (extraCount[member] || 0) + 1;
+    });
+  });
+
+  inputMembers.forEach(member => {
+    const count = extraCount[member] || 0;
+    scoreMap[member].positions.forEach(p => {
+      if (p.score === null) {
+        if (count > 0) {
+          p.score = Math.max(50 - (count - 1), 26); // 50, 49, 48...
+        } else {
+          p.score = 25; // 完全未経験
+        }
+      }
+    });
+  });
+
+  // 全スコアを展開して割り当て候補を作成
   const combinations = [];
   positions.forEach((pos, posIndex) => {
     inputMembers.forEach((member, memberIndex) => {
-      const score = calcScore(pos.name, member);
+      const entry = scoreMap[member].positions.find(p => p.positionName === pos.name);
       combinations.push({
         positionName: pos.name,
         member,
-        score,
+        score: entry?.score ?? 0,
         posIndex,
         memberIndex
       });
     });
   });
 
-  // スコア → ポジション優先 → 入力順 でソート
+  // スコア・優先度順でソートして割り当て
   combinations.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
@@ -73,52 +107,8 @@ async function assignPositions(inputMembers) {
     }
   }
 
-  // ▼ 重複最適化：経験者重複解消ロジック
-  const memberToPositions = {};
-  positions.forEach(pos => {
-    inputMembers.forEach(member => {
-      const score = calcScore(pos.name, member);
-      if (score >= 50) {
-        if (!memberToPositions[member]) memberToPositions[member] = [];
-        memberToPositions[member].push(pos.name);
-      }
-    });
-  });
-
-  const conflictedPositions = positions
-    .map(pos => pos.name)
-    .filter(posName => {
-      const candidates = inputMembers.filter(m => {
-        return !usedMembers.has(m) && calcScore(posName, m) >= 50;
-      });
-      return candidates.length >= 2;
-    });
-
-  const conflictedMembers = [...new Set(
-    conflictedPositions.flatMap(posName =>
-      inputMembers.filter(m => {
-        return !usedMembers.has(m) && calcScore(posName, m) >= 50;
-      })
-    )
-  )];
-
-  conflictedMembers
-    .sort((a, b) => (memberToPositions[a]?.length || 0) - (memberToPositions[b]?.length || 0))
-    .forEach(member => {
-      const possiblePositions = memberToPositions[member].filter(p => !usedPositions.has(p));
-      if (possiblePositions.length > 0) {
-        const posName = possiblePositions[0];
-        assignmentMap[posName] = {
-          member,
-          score: calcScore(posName, member)
-        };
-        usedPositions.add(posName);
-        usedMembers.add(member);
-      }
-    });
-
-  // 最終的に初日順に揃えて返却
-  const assigned = positions.map(pos => {
+  // 最終形式に揃えて返す
+  return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
         positionName: pos.name,
@@ -133,6 +123,4 @@ async function assignPositions(inputMembers) {
       };
     }
   });
-
-  return assigned;
 }
