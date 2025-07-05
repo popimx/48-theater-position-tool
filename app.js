@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ${positions.map(pos => {
             const assigned = positionMap[pos.name];
             const remark = assigned?.score === 25 ? '初' : '';
-            return `...`;
-            })
+            return `
               <tr>
                 <td>${pos.name}</td>
                 <td>${assigned?.member || '―'}</td>
