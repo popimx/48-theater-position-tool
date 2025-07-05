@@ -1,0 +1,62 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "塩月希依音ポジ",
+    "firstDayMember": "塩月希依音",
+    "experiencedMembers": ["安部若菜", "坂田心咲", "坂下真心", "出口結菜"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "坂田心咲ポジ",
+    "firstDayMember": "坂田心咲",
+    "experiencedMembers": ["坂下真心", "桜田彩叶", "新澤菜央"]
+  },
+  {
+    "positionId": "pos03",
+    "name": "安部若菜ポジ",
+    "firstDayMember": "安部若菜",
+    "experiencedMembers": ["坂下真心", "桜田彩叶", "龍本弥生", "水田詩織"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "新澤菜央ポジ",
+    "firstDayMember": "新澤菜央",
+    "experiencedMembers": ["青原和花", "桜田彩叶", "龍本弥生", "泉綾乃"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "出口結菜ポジ",
+    "firstDayMember": "出口結菜",
+    "experiencedMembers": ["坂下真心", "坂本理紗", "石田優美"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "桜田彩叶ポジ",
+    "firstDayMember": "桜田彩叶",
+    "experiencedMembers": ["坂本理紗", "舟橋礼菜", "青原優花"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "坂下真心ポジ",
+    "firstDayMember": "坂下真心",
+    "experiencedMembers": ["青原和花", "宮本杏海", "吉見純音"]
+  },
+  {
+    "positionId": "pos08",
+    "name": "水田詩織ポジ",
+    "firstDayMember": "水田詩織",
+    "experiencedMembers": ["青原和花", "芳野心咲", "田中雪乃", "西田帆花", "眞鍋杏樹", "中川朋香"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "龍本弥生ポジ",
+    "firstDayMember": "龍本弥生",
+    "experiencedMembers": ["黒島咲花", "舟橋礼菜", "田中美空", "二瓶愛美"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "芳野心咲ポジ",
+    "firstDayMember": "芳野心咲",
+    "experiencedMembers": ["青原和花", "衣笠彩実", "松岡さくら", "松本海日菜", "板垣心和", "竹田京加"]
+  }
+]
