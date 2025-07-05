@@ -1,0 +1,83 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "佐藤綺星ポジ",
+    "firstDayMember": "佐藤綺星",
+    "experiencedMembers": [
+      "橋本恵理子",
+      "正鋳真優",
+      "秋山由奈",
+      "久保姫菜乃",
+      "伊藤百花",
+      "村山彩希"
+    ]
+  },
+  {
+    "positionId": "pos02",
+    "name": "橋本恵理子ポジ",
+    "firstDayMember": "橋本恵理子",
+    "experiencedMembers": [
+      "太田有紀",
+      "工藤華純",
+      "大賀彩姫",
+      "小濱心音"
+    ]
+  },
+  {
+    "positionId": "pos03",
+    "name": "畠山希美ポジ",
+    "firstDayMember": "畠山希美",
+    "experiencedMembers": [
+      "成田香姫奈",
+      "奥本カイリ"
+    ]
+  },
+  {
+    "positionId": "pos04",
+    "name": "平田侑希ポジ",
+    "firstDayMember": "平田侑希",
+    "experiencedMembers": [
+      "太田有紀",
+      "八木愛月",
+      "近藤沙樹"
+    ]
+  },
+  {
+    "positionId": "pos05",
+    "name": "布袋百椛ポジ",
+    "firstDayMember": "布袋百椛",
+    "experiencedMembers": [
+      "久保姫菜乃",
+      "迫由芽実",
+      "丸山ひなた"
+    ]
+  },
+  {
+    "positionId": "pos06",
+    "name": "正鋳真優ポジ",
+    "firstDayMember": "正鋳真優",
+    "experiencedMembers": [
+      "久保姫菜乃",
+      "川村結衣"
+    ]
+  },
+  {
+    "positionId": "pos07",
+    "name": "水島美結ポジ",
+    "firstDayMember": "水島美結",
+    "experiencedMembers": [
+      "平田侑希",
+      "新井彩永",
+      "花田藍衣"
+    ]
+  },
+  {
+    "positionId": "pos08",
+    "name": "山﨑空ポジ",
+    "firstDayMember": "山﨑空",
+    "experiencedMembers": [
+      "山口結愛",
+      "白鳥沙怜"
+    ]
+  }
+]
