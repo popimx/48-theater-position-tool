@@ -46,11 +46,11 @@ async function assignPositions(inputMembers) {
       .map((m, index) => ({
         member: m,
         score: calcScore(pos.name, m),
-        index // 入力順の保持
+        index
       }))
       .sort((a, b) => {
         if (b.score !== a.score) return b.score - a.score;
-        return a.index - b.index; // 同スコア時は入力順優先
+        return a.index - b.index;
       });
 
     if (candidates.length > 0) {
@@ -58,15 +58,14 @@ async function assignPositions(inputMembers) {
       assigned.push({
         positionName: pos.name,
         member: best.member,
-        score: best.score,
+        score: best.score
       });
       usedMembers.add(best.member);
     } else {
-      // 空き枠は「―」で割り当て
       assigned.push({
         positionName: pos.name,
         member: '―',
-        score: 0,
+        score: 0
       });
     }
   }
