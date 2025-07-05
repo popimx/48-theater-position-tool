@@ -33,13 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
           <tr>
             <th>ポジション名</th>
             <th>出演メンバー</th>
+            <th>備考</th> <!-- 新しく追加 -->
           </tr>
         </thead>
         <tbody>
-          ${positions.map(pos => `
+          ${positions.map(pos =>
+            const assigned = positionMap[pos.name];
+      const remark = assigned?.score === 20 ? '初' : '';
+      return `
             <tr>
               <td>${pos.name}</td>
               <td>${positionMap[pos.name] || '―'}</td>
+              <td>${remark}</td>
             </tr>
           `).join('')}
         </tbody>
