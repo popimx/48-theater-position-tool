@@ -27,12 +27,13 @@ textarea {
   width: 100%;
   max-width: 100%;
   font-size: 1.1rem;
-  padding: 14px;
+  padding: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
-  height: 160px;
+  margin-bottom: 12px;
+  height: 180px;
   box-sizing: border-box;
+  resize: vertical;
 }
 
 @media screen and (max-width: 430px) {
