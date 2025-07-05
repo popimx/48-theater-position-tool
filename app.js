@@ -15,16 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const assignedPositions = await assignPositions(members);
-      resultDiv.innerHTML = '';
 
+      // 初日ポジション順に取得
+      const positionsRes = await fetch('data/positions.json');
+      const positions = await positionsRes.json();
+
+      // ポジション名 → メンバー のマッピング
+      const positionMap = {};
       assignedPositions.forEach(({ positionName, member }) => {
-        const p = document.createElement('p');
-        p.textContent = `${positionName} → 出演メンバー: ${member}`;
-        resultDiv.appendChild(p);
+        positionMap[positionName] = member;
       });
+
+      // テーブル作成
+      const table = document.createElement('table');
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>ポジション名</th>
+            <th>出演メンバー</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${positions.map(pos => `
+            <tr>
+              <td>${pos.name}</td>
+              <td>${positionMap[pos.name] || '―'}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      `;
+
+      resultDiv.innerHTML = '';
+      resultDiv.appendChild(table);
     } catch (e) {
       resultDiv.textContent = 'エラーが発生しました。';
       console.error(e);
     }
   });
 });
+
