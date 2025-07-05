@@ -8,8 +8,6 @@ async function assignPositions(inputMembers) {
   const experienceData = await experienceRes.json();
 
   const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
-
-  // 経験者出現回数カウント
   const allExperiencedMembers = Object.values(experienceData).flat();
   const experienceCountMap = {};
   allExperiencedMembers.forEach(name => {
@@ -23,101 +21,125 @@ async function assignPositions(inputMembers) {
     }
   }
 
-  // スコア100〜25の候補を格納
-  const highPriority = []; // score 100 or 75
-  const mediumPriority = []; // score 49 or 50
-  const lowPriority = []; // score 25
-
-  // スコアの分類
+  // スコア付き候補リスト作成
+  const combinations = [];
   positions.forEach((pos, posIndex) => {
     const baseName = pos.firstDayMember;
     const experienced = experienceData[baseName] || [];
 
     inputMembers.forEach((member, memberIndex) => {
       let score = 0;
+      const isFirstDay = baseName === member;
+      const isExperienced = experienced.includes(member);
+      const totalExp = experienceCountMap[member] || 0;
 
-      const isFirstDayMatch = baseName === member;
-      const isExperiencedMatch = experienced.includes(member);
-      const totalExpCount = experienceCountMap[member] || 0;
-
-      if (isFirstDayMatch && totalExpCount === 0) {
+      if (isFirstDay && totalExp === 0) {
         score = 100;
-        highPriority.push({ positionName: pos.name, member, score, posIndex, memberIndex });
-      } else if (isExperiencedMatch && totalExpCount === 1) {
+      } else if (isExperienced && totalExp === 1) {
         score = 75;
-        highPriority.push({ positionName: pos.name, member, score, posIndex, memberIndex });
-      } else if (isFirstDayMatch || isExperiencedMatch) {
-        // スコア50または49
+      } else if (isFirstDay || isExperienced) {
         let relevantCount = 0;
         positions.forEach(p => {
-          const name = p.firstDayMember;
-          const exp = experienceData[name] || [];
-          if (name === member || exp.includes(member)) {
-            relevantCount++;
-          }
+          const fn = p.firstDayMember;
+          const exp = experienceData[fn] || [];
+          if (fn === member || exp.includes(member)) relevantCount++;
         });
         score = relevantCount === 1 ? 50 : 49;
-        mediumPriority.push({ positionName: pos.name, member, score, posIndex, memberIndex });
       } else {
         score = 25;
-        lowPriority.push({ positionName: pos.name, member, score, posIndex, memberIndex });
       }
+
+      combinations.push({
+        positionName: pos.name,
+        member,
+        score,
+        posIndex,
+        memberIndex
+      });
     });
   });
 
-  // 割り当てセット
+  // ① ② スコア100・75 の割り当て
+  combinations.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
+    return a.memberIndex - b.memberIndex;
+  });
+
   const usedPositions = new Set();
   const usedMembers = new Set();
   const assignmentMap = {};
 
-  const assign = (list) => {
-    list.sort((a, b) => {
-      if (b.score !== a.score) return b.score - a.score;
-      if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
-      return a.memberIndex - b.memberIndex;
+  for (const combo of combinations) {
+    if ((combo.score === 100 || combo.score === 75) &&
+        !usedPositions.has(combo.positionName) && !usedMembers.has(combo.member)) {
+      assignmentMap[combo.positionName] = {
+        member: combo.member,
+        score: combo.score
+      };
+      usedPositions.add(combo.positionName);
+      usedMembers.add(combo.member);
+    }
+  }
+
+  // 🔍 スコア49・50のポジション候補抽出
+  const score50Combos = combinations.filter(
+    c => (c.score === 50 || c.score === 49) &&
+         !usedPositions.has(c.positionName) &&
+         !usedMembers.has(c.member)
+  );
+
+  // ポジションごとの候補をまとめる
+  const posToCandidates = {};
+  score50Combos.forEach(c => {
+    if (!posToCandidates[c.positionName]) posToCandidates[c.positionName] = [];
+    posToCandidates[c.positionName].push(c.member);
+  });
+
+  // メンバーごとの該当ポジション数
+  const memberToPositions = {};
+  score50Combos.forEach(c => {
+    if (!memberToPositions[c.member]) memberToPositions[c.member] = new Set();
+    memberToPositions[c.member].add(c.positionName);
+  });
+
+  // 候補をできるだけ綺麗に割り当て
+  const assignedPos = new Set([...usedPositions]);
+  const assignedMem = new Set([...usedMembers]);
+
+  Object.entries(posToCandidates).forEach(([positionName, candidates]) => {
+    // 候補を該当ポジション数の少ない順にソート
+    candidates.sort((a, b) => {
+      return (memberToPositions[a].size - memberToPositions[b].size);
     });
 
-    for (const combo of list) {
-      if (!usedPositions.has(combo.positionName) && !usedMembers.has(combo.member)) {
-        assignmentMap[combo.positionName] = {
-          member: combo.member,
-          score: combo.score
-        };
-        usedPositions.add(combo.positionName);
-        usedMembers.add(combo.member);
-      }
-    }
-  };
-
-  // スコア100・75を先に割り当て
-  assign(highPriority);
-
-  // スコア49・50：関連ポジションのみ
-  const groupedMedium = {};
-  mediumPriority.forEach(c => {
-    if (!groupedMedium[c.member]) groupedMedium[c.member] = [];
-    groupedMedium[c.member].push(c);
-  });
-
-  Object.entries(groupedMedium).forEach(([member, entries]) => {
-    for (const entry of entries) {
-      const { positionName } = entry;
-      if (!usedPositions.has(positionName) && !usedMembers.has(member)) {
+    for (const candidate of candidates) {
+      if (!assignedMem.has(candidate) && !assignedPos.has(positionName)) {
         assignmentMap[positionName] = {
-          member,
-          score: entry.score
+          member: candidate,
+          score: 49
         };
-        usedPositions.add(positionName);
-        usedMembers.add(member);
-        break; // 1人1回のみ割り当て
+        assignedMem.add(candidate);
+        assignedPos.add(positionName);
+        break;
       }
     }
   });
 
-  // スコア25：残りの空きに入れる
-  assign(lowPriority);
+  // 残り（スコア25など）を割り当て
+  for (const combo of combinations) {
+    if (!assignmentMap[combo.positionName] &&
+        !assignedMem.has(combo.member) &&
+        combo.score <= 49) {
+      assignmentMap[combo.positionName] = {
+        member: combo.member,
+        score: combo.score
+      };
+      assignedMem.add(combo.member);
+    }
+  }
 
-  // 最終出力（ポジション順）
+  // 最終形式に整えて返却
   return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
