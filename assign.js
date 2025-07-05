@@ -40,19 +40,27 @@ async function assignPositions(inputMembers) {
   const usedMembers = new Set();
 
   for (const pos of positions) {
-    // 割り当て候補をスコア順に並べる
+    // 割り当て候補をスコア順（同スコアなら入力順）で並べる
     const candidates = inputMembers
       .filter(m => !usedMembers.has(m))
-      .map(m => ({ member: m, score: calcScore(pos.name, m) }))
-      .sort((a, b) => b.score - a.score);
+      .map((m, index) => ({
+        member: m,
+        score: calcScore(pos.name, m),
+        index // 入力順の保持
+      }))
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.index - b.index; // 同スコア時は入力順優先
+      });
 
-    if (candidates.length > 0 && candidates[0].score > 0) {
+    if (candidates.length > 0) {
+      const best = candidates[0];
       assigned.push({
         positionName: pos.name,
-        member: candidates[0].member,
-        score: candidates[0].score,
+        member: best.member,
+        score: best.score,
       });
-      usedMembers.add(candidates[0].member);
+      usedMembers.add(best.member);
     } else {
       // 空き枠は「―」で割り当て
       assigned.push({
@@ -62,9 +70,6 @@ async function assignPositions(inputMembers) {
       });
     }
   }
-
-  // 入力メンバーがポジション数より多い場合は余りは割り当てなしで返す
-  // （必要ならここで別途処理可能）
 
   return assigned;
 }
