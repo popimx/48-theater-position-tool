@@ -42,18 +42,18 @@ async function assignPositions(inputMembers) {
   for (const pos of positions) {
     // 割り当て候補をスコア順（同スコアなら入力順）で並べる
     const candidates = inputMembers
-      .filter(m => !usedMembers.has(m))
       .map((m, index) => ({
         member: m,
         score: calcScore(pos.name, m),
         index
       }))
+      .filter(c => !usedMembers.has(c.member))
       .sort((a, b) => {
         if (b.score !== a.score) return b.score - a.score;
         return a.index - b.index;
       });
 
-    if (candidates.length > 0) {
+    if (candidates.length > 0 && candidates[0].score > 0) {
       const best = candidates[0];
       assigned.push({
         positionName: pos.name,
