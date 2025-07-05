@@ -18,13 +18,9 @@ async function assignPositions(inputMembers) {
   // スコア計算関数
   function calcScore(positionName, memberName) {
     if (!memberName || memberName === '―') return 0;
-
     const basePositionName = positionName.replace('ポジ', '');
-
-    // 初日メンバーかどうか（ポジション名と同じ名前なら100点）
     if (basePositionName === memberName) return 100;
 
-    // 経験者かどうか
     const experienced = experienceData[basePositionName] || [];
     if (experienced.includes(memberName)) {
       const count = nameCountMap[memberName] || 0;
@@ -32,58 +28,62 @@ async function assignPositions(inputMembers) {
       if (count >= 2) return 50;
     }
 
-    // 経験なしは25点
     return 25;
   }
 
-  const assigned = [];
-  const usedMembers = new Set();
-
-  // 入力メンバーごとにスコアを事前計算
-  const memberScores = inputMembers.map((member, index) => {
-    return {
-      name: member,
-      index,
-      scores: positions.map(pos => ({
-        position: pos.name,
-        score: calcScore(pos.name, member)
-      }))
-    };
+  // すべての組み合わせのスコアを生成
+  const combinations = [];
+  positions.forEach((pos, posIndex) => {
+    inputMembers.forEach((member, memberIndex) => {
+      const score = calcScore(pos.name, member);
+      combinations.push({
+        positionName: pos.name,
+        member,
+        score,
+        posIndex,
+        memberIndex
+      });
+    });
   });
 
-  for (const pos of positions) {
-    // このポジションに対して、未使用メンバーの中から最適な人を探す
-    const candidates = memberScores
-      .filter(m => !usedMembers.has(m.name))
-      .map(m => {
-        const posScore = m.scores.find(s => s.position === pos.name);
-        return {
-          member: m.name,
-          score: posScore ? posScore.score : 0,
-          index: m.index
-        };
-      })
-      .sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        return a.index - b.index; // 同スコアなら入力順
-      });
+  // スコア → ポジション優先 → 入力順 でソート
+  combinations.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
+    return a.memberIndex - b.memberIndex;
+  });
 
-    if (candidates.length > 0 && candidates[0].score > 0) {
-      const best = candidates[0];
-      assigned.push({
+  const usedPositions = new Set();
+  const usedMembers = new Set();
+  const assignmentMap = {};
+
+  for (const combo of combinations) {
+    if (!usedPositions.has(combo.positionName) && !usedMembers.has(combo.member)) {
+      assignmentMap[combo.positionName] = {
+        member: combo.member,
+        score: combo.score
+      };
+      usedPositions.add(combo.positionName);
+      usedMembers.add(combo.member);
+    }
+  }
+
+  // 最終的に positions の順番に揃えて返却
+  const assigned = positions.map(pos => {
+    if (assignmentMap[pos.name]) {
+      return {
         positionName: pos.name,
-        member: best.member,
-        score: best.score
-      });
-      usedMembers.add(best.member);
+        member: assignmentMap[pos.name].member,
+        score: assignmentMap[pos.name].score
+      };
     } else {
-      assigned.push({
+      return {
         positionName: pos.name,
         member: '―',
         score: 0
-      });
+      };
     }
-  }
+  });
 
   return assigned;
 }
