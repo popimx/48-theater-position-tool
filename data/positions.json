@@ -1,0 +1,98 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "小濱心音ポジ",
+    "firstDayMember": "小濱心音",
+    "experiencedMembers": ["川村結衣"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "佐藤綺星ポジ",
+    "firstDayMember": "佐藤綺星",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos03",
+    "name": "橋本恵理子ポジ",
+    "firstDayMember": "橋本恵理子",
+    "experiencedMembers": ["工藤華純"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "畠山希美ポジ",
+    "firstDayMember": "畠山希美",
+    "experiencedMembers": ["工藤華純"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "平田侑希ポジ",
+    "firstDayMember": "平田侑希",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos06",
+    "name": "布袋百椛ポジ",
+    "firstDayMember": "布袋百椛",
+    "experiencedMembers": ["白鳥沙怜"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "正鋳真優ポジ",
+    "firstDayMember": "正鋳真優",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "水島美結ポジ",
+    "firstDayMember": "水島美結",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos09",
+    "name": "山﨑空ポジ",
+    "firstDayMember": "山﨑空",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos10",
+    "name": "秋山由奈ポジ",
+    "firstDayMember": "秋山由奈",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos11",
+    "name": "新井彩永ポジ",
+    "firstDayMember": "新井彩永",
+    "experiencedMembers": ["工藤華純"]
+  },
+  {
+    "positionId": "pos12",
+    "name": "久保姫菜乃ポジ",
+    "firstDayMember": "久保姫菜乃",
+    "experiencedMembers": ["伊藤百花"]
+  },
+  {
+    "positionId": "pos13",
+    "name": "迫由芽実ポジ",
+    "firstDayMember": "迫由芽実",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos14",
+    "name": "成田香姫奈ポジ",
+    "firstDayMember": "成田香姫奈",
+    "experiencedMembers": ["太田有紀", "奥本カイリ"]
+  },
+  {
+    "positionId": "pos15",
+    "name": "八木愛月ポジ",
+    "firstDayMember": "八木愛月",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos16",
+    "name": "山口結愛ポジ",
+    "firstDayMember": "山口結愛",
+    "experiencedMembers": ["花田藍衣"]
+  }
+]
