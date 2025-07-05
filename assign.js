@@ -60,9 +60,36 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // スコア → ポジション順 → 入力順 に並べて割り当て
+  // ✅ 競合分析：スコア50以上で割り当てられる候補が2人以上のポジションを調べる
+  const positionConflicts = {};
+  positions.forEach(pos => {
+    const availableMembers = inputMembers
+      .map(member => ({
+        member,
+        score: calcScore(pos.name, member)
+      }))
+      .filter(({ score }) => score >= 50)
+      .map(({ member }) => member);
+
+    if (availableMembers.length >= 2) {
+      positionConflicts[pos.name] = availableMembers;
+    }
+  });
+
+  // ✅ 各メンバーが何回競合ポジションに出てきたかを集計
+  const memberConflictCount = {};
+  Object.values(positionConflicts).flat().forEach(member => {
+    memberConflictCount[member] = (memberConflictCount[member] || 0) + 1;
+  });
+
+  // スコア → 出現回数少ない順 → ポジション順 → 入力順 に並べて割り当て
   combinations.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
+
+    const aCount = memberConflictCount[a.member] || 0;
+    const bCount = memberConflictCount[b.member] || 0;
+    if (aCount !== bCount) return aCount - bCount;
+
     if (a.posIndex !== b.posIndex) return a.posIndex - b.posIndex;
     return a.memberIndex - b.memberIndex;
   });
