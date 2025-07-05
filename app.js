@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     resultDiv.innerHTML = '割り当て中...';
 
     const input = document.getElementById('member-input').value;
-    const members = input.split('・').map(name => name.trim()).filter(name => name);
-
-    if (members.length !== 16) {
-      resultDiv.innerHTML = '⚠️ 16人ちょうどで入力してください。現在: ' + members.length + '人';
-      return;
-    }
+    const members = input
+  .replace(/\\n/g, '・') // 改行を「・」に変換
+  .split('・')
+  .map(name => name.trim())
+  .filter(name => name !== '');
 
     try {
       const assignedPositions = await assignPositions(members);
