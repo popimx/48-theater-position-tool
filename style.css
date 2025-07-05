@@ -16,28 +16,28 @@ header h1 {
   margin-bottom: 1.5rem;
 }
 
+/* --- ここから修正 --- */
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  font-size: 1rem; /* 文字サイズをtextareaなどに合わせて統一 */
-  color: #222;
+  font-size: 1rem;          /* 文字サイズを1remに統一 */
+  color: #333;
 }
 
-/* 公演選択のセレクトボックス */
+/* セレクトボックスのデザイン追加 */
 #stage-select {
+  display: block;
   width: 100%;
-  max-width: 100%;
-  font-size: 1rem;      /* ラベルと同じ文字サイズ */
-  padding: 10px 12px;   /* textareaと同じくらいの内側余白 */
+  font-size: 1rem;          /* ラベルと同じサイズ */
+  padding: 8px 10px;
+  margin-bottom: 20px;      /* 下に十分な余白 */
   border-radius: 6px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;  /* ラベルとの間に余白 */
   box-sizing: border-box;
-  appearance: none;     /* ブラウザ依存の矢印調整 */
   background-color: white;
-  cursor: pointer;
 }
+/* --- 修正ここまで --- */
 
 textarea {
   width: 100%;
