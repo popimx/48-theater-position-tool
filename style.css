@@ -6,7 +6,7 @@ body {
   padding: 20px;
   background-color: #f9f9f9;
   color: #222;
-  max-width: 430px;
+  max-width: 390px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -59,11 +59,19 @@ button#assign-btn:hover {
   background-color: #005bb5;
 }
 
-#result p {
-  font-size: 1rem;
-  padding: 8px 12px;
-  background: white;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f2f2f2;
 }
