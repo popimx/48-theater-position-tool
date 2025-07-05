@@ -1,62 +1,62 @@
 [
   {
-    positionId: "pos01",
-    name: "上西怜ポジ",
-    firstDayMember: "上西怜",
-    experiencedMembers: ["芳賀礼", "眞鍋杏樹", "隅野和奏", "前田令子"]
+    "positionId": "pos01",
+    "name": "上西怜ポジ",
+    "firstDayMember": "上西怜",
+    "experiencedMembers": ["芳賀礼", "眞鍋杏樹", "隅野和奏", "前田令子"]
   },
   {
-    positionId: "pos02",
-    name: "山本望叶ポジ",
-    firstDayMember: "山本望叶",
-    experiencedMembers: ["芳賀礼", "眞鍋杏樹", "前田令子"]
+    "positionId": "pos02",
+    "name": "山本望叶ポジ",
+    "firstDayMember": "山本望叶",
+    "experiencedMembers": ["芳賀礼", "眞鍋杏樹", "前田令子"]
   },
   {
-    positionId: "pos03",
-    name: "貞野遥香ポジ",
-    firstDayMember: "貞野遥香",
-    experiencedMembers: ["板垣心和", "芳賀礼", "眞鍋杏樹", "和田海佑", "新澤菜央"]
+    "positionId": "pos03",
+    "name": "貞野遥香ポジ",
+    "firstDayMember": "貞野遥香",
+    "experiencedMembers": ["板垣心和", "芳賀礼", "眞鍋杏樹", "和田海佑", "新澤菜央"]
   },
   {
-    positionId: "pos04",
-    name: "前田令子ポジ",
-    firstDayMember: "前田令子",
-    experiencedMembers: ["池帆乃香", "西由真", "眞鍋杏樹", "塩月希依音", "原かれん", "石田優美"]
+    "positionId": "pos04",
+    "name": "前田令子ポジ",
+    "firstDayMember": "前田令子",
+    "experiencedMembers": ["池帆乃香", "西由真", "眞鍋杏樹", "塩月希依音", "原かれん", "石田優美"]
   },
   {
-    positionId: "pos05",
-    name: "隅野和奏ポジ",
-    firstDayMember: "隅野和奏",
-    experiencedMembers: ["板垣心和", "西田帆花", "鵜野みずき", "松野美桜", "出口結菜"]
+    "positionId": "pos05",
+    "name": "隅野和奏ポジ",
+    "firstDayMember": "隅野和奏",
+    "experiencedMembers": ["板垣心和", "西田帆花", "鵜野みずき", "松野美桜", "出口結菜"]
   },
   {
-    positionId: "pos06",
-    name: "和田海佑ポジ",
-    firstDayMember: "和田海佑",
-    experiencedMembers: ["西田帆花", "吉見純音", "田中雪乃", "龍本弥生", "水田詩織", "早川夢菜"]
+    "positionId": "pos06",
+    "name": "和田海佑ポジ",
+    "firstDayMember": "和田海佑",
+    "experiencedMembers": ["西田帆花", "吉見純音", "田中雪乃", "龍本弥生", "水田詩織", "早川夢菜"]
   },
   {
-    positionId: "pos07",
-    name: "原かれんポジ",
-    firstDayMember: "原かれん",
-    experiencedMembers: ["池帆乃香", "田中美空", "芳賀礼", "吉見純音", "塩月希依音"]
+    "positionId": "pos07",
+    "name": "原かれんポジ",
+    "firstDayMember": "原かれん",
+    "experiencedMembers": ["池帆乃香", "田中美空", "芳賀礼", "吉見純音", "塩月希依音"]
   },
   {
-    positionId: "pos08",
-    name: "眞鍋杏樹ポジ",
-    firstDayMember: "眞鍋杏樹",
-    experiencedMembers: ["西島梨央", "西田帆花", "三鴨くるみ", "青原和花", "桜田彩叶", "松野美桜"]
+    "positionId": "pos08",
+    "name": "眞鍋杏樹ポジ",
+    "firstDayMember": "眞鍋杏樹",
+    "experiencedMembers": ["西島梨央", "西田帆花", "三鴨くるみ", "青原和花", "桜田彩叶", "松野美桜"]
   },
   {
-    positionId: "pos09",
-    name: "早川夢菜ポジ",
-    firstDayMember: "早川夢菜",
-    experiencedMembers: ["板垣心和", "田中美空", "西由真", "福野杏実", "鵜野みずき"]
+    "positionId": "pos09",
+    "name": "早川夢菜ポジ",
+    "firstDayMember": "早川夢菜",
+    "experiencedMembers": ["板垣心和", "田中美空", "西由真", "福野杏実", "鵜野みずき"]
   },
   {
-    positionId: "pos10",
-    name: "池帆乃香ポジ",
-    firstDayMember: "池帆乃香",
-    experiencedMembers: ["西島梨央", "吉見純音", "池田典愛", "舟橋礼菜", "村井悠莉"]
+    "positionId": "pos10",
+    "name": "池帆乃香ポジ",
+    "firstDayMember": "池帆乃香",
+    "experiencedMembers": ["西島梨央", "吉見純音", "池田典愛", "舟橋礼菜", "村井悠莉"]
   }
-];
+]
