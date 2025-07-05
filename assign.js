@@ -7,12 +7,22 @@ async function assignPositions(inputMembers) {
   const experienceRes = await fetch(`data/${stage}/experience.json`);
   const experienceData = await experienceRes.json();
 
+  // 追加：全初日メンバーセット
+  const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
+
   // 全経験者出現カウント
   const allExperiencedMembers = Object.values(experienceData).flat();
   const experienceCountMap = {};
   allExperiencedMembers.forEach(name => {
     experienceCountMap[name] = (experienceCountMap[name] || 0) + 1;
   });
+
+  // 追加：入力メンバーが初日メンバーか経験者か存在するかチェック
+  for (const member of inputMembers) {
+    if (!firstDayMembersSet.has(member) && !experienceCountMap[member]) {
+      throw new Error(`データ整合性エラー: "${member}" は初日メンバーにも経験者にも存在しません。`);
+    }
+  }
 
   // ポジションごとに候補メンバーをスコアリング
   const scoreMap = {}; // member -> { positions: [], score }
