@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <tbody>
           ${positions.map(pos => {
             const assigned = positionMap[pos.name];
-            const remark = assigned?.score === 20 ? '初' : '';
+            const remark = assigned?.score === 25 ? '初' : '';
             return `...`;
             })
               <tr>
