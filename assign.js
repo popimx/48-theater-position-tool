@@ -1,6 +1,6 @@
 
 async function assignPositions(members) {
-  const positionsRes = await fetch('./data/positions.json');
+  const positionsRes = await fetch('data/positions.json');
   const positions = await positionsRes.json();
 
   const experienceCount = {};
