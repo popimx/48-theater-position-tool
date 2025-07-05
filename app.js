@@ -19,10 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
+      // 公演を選択
+      const stage = document.getElementById('stage-select')?.value || 'kokokarada';
+
+      // 割り当て処理（assignPositions内も同じstageを参照する想定）
       const assignedPositions = await assignPositions(members);
 
-      // 初日ポジション順データを取得
-      const positionsRes = await fetch('data/positions.json');
+      // 初日ポジション順データをstageに応じて取得
+      const positionsRes = await fetch(`data/${stage}/positions.json`);
       const positions = await positionsRes.json();
 
       // ポジション名 → { member, score } のマップを作成
