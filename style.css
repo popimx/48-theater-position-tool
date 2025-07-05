@@ -33,8 +33,6 @@ textarea {
   margin-bottom: 20px;
   height: 160px;
   box-sizing: border-box;
-  resize: none;
-  line-height: 1.5;
 }
 
 @media screen and (max-width: 430px) {
