@@ -147,7 +147,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ⑨ スコア50候補（初日または経験者）を経験者優先でポジションごとに整理
+  // ⑨ スコア50候補（初日または経験者）をポジションごとに整理
   const score50Candidates = candidates.filter(c =>
     c.score === 50 &&
     !usedPositions.has(c.positionName) &&
@@ -156,28 +156,15 @@ async function assignPositions(inputMembers) {
   const posTo50Candidates = {};
   score50Candidates.forEach(c => {
     if (!posTo50Candidates[c.positionName]) posTo50Candidates[c.positionName] = [];
-    // 経験者かどうかのフラグ
-    const isExperienced = (c.member === c.baseName) || ((experienceData[c.baseName] || []).includes(c.member));
-    posTo50Candidates[c.positionName].push({ member: c.member, isExperienced });
+    posTo50Candidates[c.positionName].push(c.member);
   });
 
-  // 各ポジションの候補リストを経験者優先でソート
-  for (const pos in posTo50Candidates) {
-    posTo50Candidates[pos].sort((a, b) => (b.isExperienced === a.isExperienced) ? 0 : (b.isExperienced ? 1 : -1));
-  }
-
-  // ポジションリストを候補メンバー数が少ない順にソート
-  const pos50List = Object.keys(posTo50Candidates).sort((a, b) => {
-    return posTo50Candidates[a].length - posTo50Candidates[b].length;
-  });
-
-  // ⑩ バックトラック割り当て（メンバー名を渡すため修正）
+  // ⑩ スコア50をバックトラックで重複なく割り当て
   function backtrackAssign(posList, usedMembers, assignment, index = 0) {
     if (index >= posList.length) return true;
     const pos = posList[index];
     const candidates = posTo50Candidates[pos] || [];
-    for (const c of candidates) {
-      const member = c.member;
+    for (const member of candidates) {
       if (!usedMembers.has(member)) {
         assignment[pos] = member;
         usedMembers.add(member);
@@ -189,21 +176,25 @@ async function assignPositions(inputMembers) {
     return false;
   }
 
+  const pos50List = Object.keys(posTo50Candidates);
   const assignment50 = {};
   const usedMembers50 = new Set();
-  backtrackAssign(pos50List, usedMembers50, assignment50, 0);
+  const success = backtrackAssign(pos50List, usedMembers50, assignment50, 0);
 
-  // ⑪ スコア50割り当て反映
+  // ⑪ スコア50割り当て反映（割り当て成功した分だけ）
   for (const [posName, member] of Object.entries(assignment50)) {
     assignmentMap[posName] = { member, score: 50 };
     usedPositions.add(posName);
     usedMembers.add(member);
   }
 
-  // ⑫ スコア25を最後に割り当て
+  // ⑫ バックトラックで割り当てできなかったポジションだけスコア25で割り当て
+  const unassignedPos = pos50List.filter(pos => !assignment50.hasOwnProperty(pos));
+
   candidates
     .filter(c =>
       c.score === 25 &&
+      unassignedPos.includes(c.positionName) &&
       !usedPositions.has(c.positionName) &&
       !usedMembers.has(c.member)
     )
