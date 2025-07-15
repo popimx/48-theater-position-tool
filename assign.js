@@ -1,6 +1,9 @@
 async function assignPositions(inputMembers) {
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
+  // 🔹重複排除
+  inputMembers = [...new Set(inputMembers)];
+
   // ① データ読み込み
   const positionsRes = await fetch(`data/${stage}/positions.json`);
   const experienceRes = await fetch(`data/${stage}/experience.json`);
@@ -177,11 +180,11 @@ async function assignPositions(inputMembers) {
   }
   backtrackAssign();
 
-  // ⑪ スコア50割り当て反映
+  // ⑪ スコア50 割り当て反映（★重複防止：usedMembers にも追加）
   for (const [posName, member] of Object.entries(assignment50)) {
     assignmentMap[posName] = { member, score: 50 };
     usedPositions.add(posName);
-    usedMembers.add(member);
+    usedMembers.add(member); // ← 重要
   }
 
   // ⑫ スコア25で埋める（スコア50で埋まらなかったポジ）
