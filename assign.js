@@ -1,6 +1,6 @@
 async function assignPositions(inputMembers) {
-  // ステージ選択（kokonidattetenshihairu に対応済み）
-  const stage = document.getElementById('stage-select')?.value || 'kokokarada';
+  // ステージ選択。初期値は「ここにだって天使はいる」公演のキーに設定
+  const stage = document.getElementById('stage-select')?.value || 'kokonidattetenshihairu';
 
   // ① ポジション・経験データを読み込み
   const positionsRes = await fetch(`data/${stage}/positions.json`);
@@ -8,7 +8,7 @@ async function assignPositions(inputMembers) {
   const positions = await positionsRes.json();
   const experienceData = await experienceRes.json();
 
-  // ② 初日メンバーセットを作成
+  // ② 初日メンバーセットを作成（初日メンバーの効率的な検索用）
   const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
 
   // ③ 各メンバーの経験ポジション数（初日含む）をカウント
@@ -23,7 +23,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ④ 逆引きマップ：メンバー → 関連ポジション（初日・経験）
+  // ④ 逆引きマップ：メンバー → 関連ポジション（初日・経験者）
   const memberToPositions = {};
   for (const m of inputMembers) memberToPositions[m] = new Set();
   positions.forEach(pos => {
@@ -36,7 +36,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ★ 固定ポジション（スコア70）の設定（ステージごと）
+  // ★ 固定ポジション（スコア70）をステージごとに設定
   const fixedAssignmentsMap = {
     mokugekisha: {
       "石橋颯ポジ": "渋井美奈",
@@ -97,12 +97,12 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // ⑥ 割り当て状態管理
+  // ⑥ 割り当て済み管理
   const usedPositions = new Set();
   const usedMembers = new Set();
   const assignmentMap = {};
 
-  // ⑦ スコア100 割り当て
+  // ⑦ スコア100優先割り当て
   candidates
     .filter(c => c.score === 100)
     .sort((a, b) => a.posIndex - b.posIndex)
@@ -114,7 +114,7 @@ async function assignPositions(inputMembers) {
       }
     });
 
-  // ⑧ スコア75 割り当て（候補ポジション数が少ない順）
+  // ⑧ スコア75 割り当て（候補ポジション数少ない順）
   const score75Candidates = candidates.filter(c =>
     c.score === 75 &&
     !usedPositions.has(c.positionName) &&
@@ -134,7 +134,7 @@ async function assignPositions(inputMembers) {
       }
     });
 
-  // ⑧.5 スコア70：固定割り当てを反映
+  // ⑧.5 固定ポジション（スコア70）を割り当て
   Object.entries(fixedAssignments).forEach(([positionName, member]) => {
     if (
       inputMembers.includes(member) &&
@@ -147,7 +147,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ⑨ スコア50候補（初日または経験者）をポジションごとに整理
+  // ⑨ スコア50候補（初日 or 経験者）をポジション別に整理
   const score50Candidates = candidates.filter(c =>
     c.score === 50 &&
     !usedPositions.has(c.positionName) &&
@@ -159,18 +159,18 @@ async function assignPositions(inputMembers) {
     posTo50Candidates[c.positionName].push(c.member);
   });
 
-  // ⑩ スコア50をバックトラックで重複なく割り当て
-  function backtrackAssign(posList, usedMembers, assignment, index = 0) {
+  // ⑩ バックトラックでスコア50を重複なく割り当てる関数
+  function backtrackAssign(posList, usedMembersSet, assignmentObj, index = 0) {
     if (index >= posList.length) return true;
     const pos = posList[index];
     const candidates = posTo50Candidates[pos] || [];
     for (const member of candidates) {
-      if (!usedMembers.has(member)) {
-        assignment[pos] = member;
-        usedMembers.add(member);
-        if (backtrackAssign(posList, usedMembers, assignment, index + 1)) return true;
-        delete assignment[pos];
-        usedMembers.delete(member);
+      if (!usedMembersSet.has(member)) {
+        assignmentObj[pos] = member;
+        usedMembersSet.add(member);
+        if (backtrackAssign(posList, usedMembersSet, assignmentObj, index + 1)) return true;
+        delete assignmentObj[pos];
+        usedMembersSet.delete(member);
       }
     }
     return false;
@@ -181,7 +181,7 @@ async function assignPositions(inputMembers) {
   const usedMembers50 = new Set();
   backtrackAssign(pos50List, usedMembers50, assignment50, 0);
 
-  // ⑪ スコア50割り当て反映
+  // ⑪ バックトラック結果を割り当て反映
   for (const [posName, member] of Object.entries(assignment50)) {
     assignmentMap[posName] = { member, score: 50 };
     usedPositions.add(posName);
@@ -210,7 +210,7 @@ async function assignPositions(inputMembers) {
     throw new Error(`未割り当てのメンバーがいます: ${unassignedMembers.join(', ')}`);
   }
 
-  // ⑭ 結果を元のポジション順で返す
+  // ⑭ 最終結果を元のポジション順で返す
   return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
