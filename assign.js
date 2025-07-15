@@ -1,16 +1,17 @@
 async function assignPositions(inputMembers) {
+  // ステージ選択（kokonidattetenshihairu に対応済み）
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
-  // ① ポジション・経験データ読み込み
+  // ① ポジション・経験データを読み込み
   const positionsRes = await fetch(`data/${stage}/positions.json`);
   const experienceRes = await fetch(`data/${stage}/experience.json`);
   const positions = await positionsRes.json();
   const experienceData = await experienceRes.json();
 
-  // ② 初日メンバーセット
+  // ② 初日メンバーセットを作成
   const firstDayMembersSet = new Set(positions.map(pos => pos.firstDayMember));
 
-  // ③ 各メンバーの経験ポジション数をカウント
+  // ③ 各メンバーの経験ポジション数（初日含む）をカウント
   const experienceCountMap = {};
   for (const member of inputMembers) experienceCountMap[member] = 0;
   positions.forEach(pos => {
@@ -22,7 +23,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ④ メンバー → 経験ポジションセット
+  // ④ 逆引きマップ：メンバー → 関連ポジション（初日・経験）
   const memberToPositions = {};
   for (const m of inputMembers) memberToPositions[m] = new Set();
   positions.forEach(pos => {
@@ -35,7 +36,7 @@ async function assignPositions(inputMembers) {
     }
   });
 
-  // ⑤ 固定割り当て（スコア70）
+  // ★ 固定ポジション（スコア70）の設定（ステージごと）
   const fixedAssignmentsMap = {
     mokugekisha: {
       "石橋颯ポジ": "渋井美奈",
@@ -63,7 +64,7 @@ async function assignPositions(inputMembers) {
   };
   const fixedAssignments = fixedAssignmentsMap[stage] || {};
 
-  // ⑥ 候補スコア計算
+  // ⑤ 全候補スコア付きリストを作成
   const candidates = [];
   positions.forEach((pos, posIndex) => {
     const base = pos.firstDayMember;
@@ -76,13 +77,13 @@ async function assignPositions(inputMembers) {
 
       let score;
       if (isFirstDay && expCount === 1) {
-        score = 100;
+        score = 100; // 初日＆そのポジしか経験なし
       } else if (!isFirstDay && isExperienced && expCount === 1) {
-        score = 75;
+        score = 75; // 経験者だが1回だけ
       } else if ((isFirstDay || isExperienced) && expCount >= 2) {
-        score = 50;
+        score = 50; // 複数回経験あり
       } else {
-        score = 25;
+        score = 25; // 未経験
       }
 
       candidates.push({
@@ -96,12 +97,12 @@ async function assignPositions(inputMembers) {
     });
   });
 
-  // ⑦ 状態管理
+  // ⑥ 割り当て状態管理
   const usedPositions = new Set();
   const usedMembers = new Set();
   const assignmentMap = {};
 
-  // ⑧ スコア100 割り当て
+  // ⑦ スコア100 割り当て
   candidates
     .filter(c => c.score === 100)
     .sort((a, b) => a.posIndex - b.posIndex)
@@ -113,7 +114,7 @@ async function assignPositions(inputMembers) {
       }
     });
 
-  // ⑨ スコア75 割り当て（候補数少ない順）
+  // ⑧ スコア75 割り当て（候補ポジション数が少ない順）
   const score75Candidates = candidates.filter(c =>
     c.score === 75 &&
     !usedPositions.has(c.positionName) &&
@@ -133,76 +134,43 @@ async function assignPositions(inputMembers) {
       }
     });
 
-  // ⑨.5 スコア70（固定割り当て）
-  Object.entries(fixedAssignments).forEach(([pos, member]) => {
+  // ⑧.5 スコア70：固定割り当てを反映
+  Object.entries(fixedAssignments).forEach(([positionName, member]) => {
     if (
       inputMembers.includes(member) &&
-      !usedPositions.has(pos) &&
+      !usedPositions.has(positionName) &&
       !usedMembers.has(member)
     ) {
-      assignmentMap[pos] = { member, score: 70 };
-      usedPositions.add(pos);
+      assignmentMap[positionName] = { member, score: 70 };
+      usedPositions.add(positionName);
       usedMembers.add(member);
     }
   });
 
-  // ⑩ スコア50候補整理
+  // ⑨ スコア50候補（初日または経験者）をポジションごとに整理
   const score50Candidates = candidates.filter(c =>
     c.score === 50 &&
     !usedPositions.has(c.positionName) &&
     !usedMembers.has(c.member)
   );
   const posTo50Candidates = {};
-  for (const c of score50Candidates) {
+  score50Candidates.forEach(c => {
     if (!posTo50Candidates[c.positionName]) posTo50Candidates[c.positionName] = [];
     posTo50Candidates[c.positionName].push(c.member);
-  }
+  });
 
-  // ⑩.1 候補1人だけのポジションを確定
-  for (const [pos, members] of Object.entries(posTo50Candidates)) {
-    if (members.length === 1) {
-      const member = members[0];
-      if (!usedMembers.has(member)) {
-        assignmentMap[pos] = { member, score: 50 };
-        usedPositions.add(pos);
-        usedMembers.add(member);
-        delete posTo50Candidates[pos];
-      }
-    }
-  }
-
-  // ⑩.2 1ポジだけ経験のメンバーを確定
-  const memberTo50Positions = {};
-  for (const [pos, members] of Object.entries(posTo50Candidates)) {
-    for (const member of members) {
-      if (!memberTo50Positions[member]) memberTo50Positions[member] = [];
-      memberTo50Positions[member].push(pos);
-    }
-  }
-  for (const [member, posList] of Object.entries(memberTo50Positions)) {
-    if (posList.length === 1) {
-      const pos = posList[0];
-      if (!usedPositions.has(pos) && !usedMembers.has(member)) {
-        assignmentMap[pos] = { member, score: 50 };
-        usedPositions.add(pos);
-        usedMembers.add(member);
-        delete posTo50Candidates[pos];
-      }
-    }
-  }
-
-  // ⑩.3 バックトラックで残りのスコア50を最適化割り当て
-  function backtrackAssign(posList, usedMembersSet, assignment, index = 0) {
+  // ⑩ スコア50をバックトラックで重複なく割り当て
+  function backtrackAssign(posList, usedMembers, assignment, index = 0) {
     if (index >= posList.length) return true;
     const pos = posList[index];
-    const members = posTo50Candidates[pos] || [];
-    for (const member of members) {
-      if (!usedMembersSet.has(member)) {
+    const candidates = posTo50Candidates[pos] || [];
+    for (const member of candidates) {
+      if (!usedMembers.has(member)) {
         assignment[pos] = member;
-        usedMembersSet.add(member);
-        if (backtrackAssign(posList, usedMembersSet, assignment, index + 1)) return true;
+        usedMembers.add(member);
+        if (backtrackAssign(posList, usedMembers, assignment, index + 1)) return true;
         delete assignment[pos];
-        usedMembersSet.delete(member);
+        usedMembers.delete(member);
       }
     }
     return false;
@@ -213,13 +181,14 @@ async function assignPositions(inputMembers) {
   const usedMembers50 = new Set();
   backtrackAssign(pos50List, usedMembers50, assignment50, 0);
 
-  for (const [pos, member] of Object.entries(assignment50)) {
-    assignmentMap[pos] = { member, score: 50 };
-    usedPositions.add(pos);
+  // ⑪ スコア50割り当て反映
+  for (const [posName, member] of Object.entries(assignment50)) {
+    assignmentMap[posName] = { member, score: 50 };
+    usedPositions.add(posName);
     usedMembers.add(member);
   }
 
-  // ⑪ スコア25を残りに割り当て
+  // ⑫ スコア25を最後に割り当て
   candidates
     .filter(c =>
       c.score === 25 &&
@@ -235,13 +204,13 @@ async function assignPositions(inputMembers) {
       }
     });
 
-  // ⑫ 割り当て漏れ確認
+  // ⑬ 割り当て漏れチェック
   const unassignedMembers = inputMembers.filter(m => !usedMembers.has(m));
   if (unassignedMembers.length > 0) {
     throw new Error(`未割り当てのメンバーがいます: ${unassignedMembers.join(', ')}`);
   }
 
-  // ⑬ 最終出力
+  // ⑭ 結果を元のポジション順で返す
   return positions.map(pos => {
     if (assignmentMap[pos.name]) {
       return {
