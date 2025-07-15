@@ -1,4 +1,4 @@
-async function assignPositions(inputMembers) {
+ async function assignPositions(inputMembers) {
   // ステージ選択（kokonidattetenshihairu に対応済み）
   const stage = document.getElementById('stage-select')?.value || 'kokokarada';
 
@@ -64,7 +64,7 @@ async function assignPositions(inputMembers) {
   };
   const fixedAssignments = fixedAssignmentsMap[stage] || {};
 
-  // ⑤ 全候補スコア付きリストを作成
+  // ⑤ 全候補スコア付きリストを作成（expCountも保持）
   const candidates = [];
   positions.forEach((pos, posIndex) => {
     const base = pos.firstDayMember;
@@ -92,7 +92,8 @@ async function assignPositions(inputMembers) {
         member,
         score,
         posIndex,
-        memberIndex
+        memberIndex,
+        expCount
       });
     });
   });
@@ -153,18 +154,28 @@ async function assignPositions(inputMembers) {
     !usedPositions.has(c.positionName) &&
     !usedMembers.has(c.member)
   );
+
+  // ポジション別に配列を作り、経験回数の多い順にソート（経験者優先）
   const posTo50Candidates = {};
   score50Candidates.forEach(c => {
     if (!posTo50Candidates[c.positionName]) posTo50Candidates[c.positionName] = [];
-    posTo50Candidates[c.positionName].push(c.member);
+    posTo50Candidates[c.positionName].push(c);
   });
+  Object.keys(posTo50Candidates).forEach(pos => {
+    posTo50Candidates[pos].sort((a, b) => b.expCount - a.expCount);
+  });
+
+  // ポジションリストを「候補者数が少ない順」にソート（割り当て困難なポジション優先）
+  const pos50List = Object.keys(posTo50Candidates);
+  pos50List.sort((a, b) => posTo50Candidates[a].length - posTo50Candidates[b].length);
 
   // ⑩ スコア50をバックトラックで重複なく割り当て
   function backtrackAssign(posList, usedMembers, assignment, index = 0) {
     if (index >= posList.length) return true;
     const pos = posList[index];
     const candidates = posTo50Candidates[pos] || [];
-    for (const member of candidates) {
+    for (const c of candidates) {
+      const member = c.member;
       if (!usedMembers.has(member)) {
         assignment[pos] = member;
         usedMembers.add(member);
@@ -176,7 +187,6 @@ async function assignPositions(inputMembers) {
     return false;
   }
 
-  const pos50List = Object.keys(posTo50Candidates);
   const assignment50 = {};
   const usedMembers50 = new Set();
   const success = backtrackAssign(pos50List, usedMembers50, assignment50, 0);
