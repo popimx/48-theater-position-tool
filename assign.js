@@ -227,12 +227,17 @@ async function assignPositions(inputMembers) {
     usedMembers.add(member);
   }
 
-  // ⑫ スコア50割り当てで割れなかったポジションのみスコア25割り当て
-  const unassignedPos = pos50List.filter(pos => !bestAssignment.hasOwnProperty(pos));
+  // ⑫ スコア50割り当てで割れなかったポジション、または
+  // スコア50の候補がそもそもいなかったポジションも含めて
+  // スコア25のメンバーで割り当てる処理
+  const allUnassignedPositions = positions
+    .map(pos => pos.name)
+    .filter(pos => !assignmentMap[pos]);
+
   candidates
     .filter(c =>
       c.score === 25 &&
-      unassignedPos.includes(c.positionName) &&
+      allUnassignedPositions.includes(c.positionName) &&
       !usedPositions.has(c.positionName) &&
       !usedMembers.has(c.member)
     )
