@@ -45,7 +45,7 @@ async function assignPositions(inputMembers) {
       "栗原紗英ポジ": "栗原紗英",
       "豊永阿紀ポジ": "豊永阿紀",
       "矢吹奈子ポジ": "北川陽彩",
-      "渡部愛加里ポジ": "市村愛里",
+      "渡部愛加里ポジ": "市村愛里"
     },
     kokonidattetenshihairu: {
       "今村麻莉愛ポジ": "田中伊桜莉",
