@@ -63,7 +63,7 @@
     "positionId": "pos11",
     "name": "豊永阿紀ポジ",
     "firstDayMember": "豊永阿紀",
-    "experiencedMembers": ["市村愛里", "北川陽彩"]
+    "experiencedMembers": ["市村愛里", "北川陽彩", "梁瀬鈴雅"]
   },
   {
     "positionId": "pos12",
@@ -81,7 +81,7 @@
     "positionId": "pos14",
     "name": "山内祐奈ポジ",
     "firstDayMember": "山内祐奈",
-    "experiencedMembers": ["石松結菜", "江口心々華", "福井可憐", "安井妃奈", "長野らら", "吉田めい", "龍頭綺音"]
+    "experiencedMembers": ["石松結菜", "江口心々華", "福井可憐", "安井妃奈", "長野らら", "松本苺花", "吉田めい", "龍頭綺音"]
   },
   {
     "positionId": "pos15",
@@ -93,6 +93,6 @@
     "positionId": "pos16",
     "name": "梁瀬鈴雅ポジ",
     "firstDayMember": "梁瀬鈴雅",
-    "experiencedMembers": ["渕上舞", "今村麻莉愛", "村上和叶", "山下エミリー"]
+    "experiencedMembers": ["生野莉奈", "渕上舞", "今村麻莉愛", "村上和叶", "山下エミリー"]
   }
 ]
