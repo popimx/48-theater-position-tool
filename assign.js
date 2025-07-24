@@ -40,14 +40,12 @@ async function assignPositions(inputMembers) {
   const fixedAssignmentsMap = {
     mokugekisha: {
       "石橋颯ポジ": "渋井美奈",
-      "市村愛里ポジ": "生野莉奈",
       "伊藤優絵瑠ポジ": "山内祐奈",
       "運上弘菜ポジ": "石橋颯",
       "栗原紗英ポジ": "栗原紗英",
       "豊永阿紀ポジ": "豊永阿紀",
       "矢吹奈子ポジ": "北川陽彩",
       "渡部愛加里ポジ": "市村愛里",
-      "梁瀬鈴雅ポジ": "梁瀬鈴雅"
     },
     kokonidattetenshihairu: {
       "今村麻莉愛ポジ": "田中伊桜莉",
