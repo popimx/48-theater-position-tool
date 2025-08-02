@@ -3,13 +3,13 @@
     "positionId": "pos01",
     "name": "芳賀礼ポジ",
     "firstDayMember": "芳賀礼",
-    "experiencedMembers": ["青原優花", "龍本弥生"]
+    "experiencedMembers": ["青原優花", "坂本理紗", "龍本弥生"]
   },
   {
     "positionId": "pos02",
     "name": "桜田彩叶ポジ",
     "firstDayMember": "桜田彩叶",
-    "experiencedMembers": ["板垣心和"]
+    "experiencedMembers": ["渋谷紗雪", "板垣心和"]
   },
   {
     "positionId": "pos03",
@@ -27,25 +27,25 @@
     "positionId": "pos05",
     "name": "高橋ことねポジ",
     "firstDayMember": "高橋ことね",
-    "experiencedMembers": ["松岡さくら", "池帆乃香"]
+    "experiencedMembers": ["松岡さくら", "池帆乃香", "吉見純音"]
   },
   {
     "positionId": "pos06",
     "name": "青原和花ポジ",
     "firstDayMember": "青原和花",
-    "experiencedMembers": ["板垣心和", "坂田心咲", "坂本理紗"]
+    "experiencedMembers": ["宮本杏海", "板垣心和", "坂田心咲", "坂本理紗"]
   },
   {
     "positionId": "pos07",
     "name": "青原優花ポジ",
     "firstDayMember": "青原優花",
-    "experiencedMembers": ["渋谷紗雪", "龍本弥生"]
+    "experiencedMembers": ["渋谷紗雪", "西島梨央", "龍本弥生"]
   },
   {
     "positionId": "pos08",
     "name": "池帆乃香ポジ",
     "firstDayMember": "池帆乃香",
-    "experiencedMembers": ["松岡さくら", "吉見純音"]
+    "experiencedMembers": ["福野杏実", "松岡さくら", "吉見純音"]
   },
   {
     "positionId": "pos09",
