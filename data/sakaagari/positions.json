@@ -3,7 +3,7 @@
     "positionId": "pos01",
     "name": "井澤美優ポジ",
     "firstDayMember": "井澤美優",
-    "experiencedMembers": ["渋井美奈", "藤野心葉", "立花心良"]
+    "experiencedMembers": ["渋井美奈", "藤野心葉", "立花心良", "松永悠良"]
   },
   {
     "positionId": "pos02",
@@ -45,7 +45,7 @@
     "positionId": "pos08",
     "name": "栗山梨奈ポジ",
     "firstDayMember": "栗山梨奈",
-    "experiencedMembers": ["大内梨果", "長野らら", "松永悠良", "龍頭綺音"]
+    "experiencedMembers": ["龍頭綺音", "大内梨果", "長野らら", "松永悠良"]
   },
   {
     "positionId": "pos09",
@@ -81,7 +81,7 @@
     "positionId": "pos14",
     "name": "森﨑冴彩ポジ",
     "firstDayMember": "森﨑冴彩",
-    "experiencedMembers": ["藤野心葉", "石井彩音", "江浦優香", "片平紗麗"]
+    "experiencedMembers": ["藤野心葉", "江浦優香", "石井彩音", "片平紗麗"]
   },
   {
     "positionId": "pos15",
@@ -93,6 +93,6 @@
     "positionId": "pos16",
     "name": "山内祐奈ポジ",
     "firstDayMember": "山内祐奈",
-    "experiencedMembers": ["井澤美優", "大内梨果", "森﨑冴彩"]
+    "experiencedMembers": ["中野南実", "井澤美優", "大内梨果", "森﨑冴彩"]
   }
 ]
