@@ -39,8 +39,6 @@ async function assignPositions(inputMembers) {
   // ★ 固定ポジション（スコア70）の割り当て候補（ステージごとに設定）
   const fixedAssignmentsMap = {
     mokugekisha: {
-      "石橋颯ポジ": "渋井美奈",
-      "伊藤優絵瑠ポジ": "山内祐奈",
       "運上弘菜ポジ": "石橋颯",
       "栗原紗英ポジ": "栗原紗英",
       "豊永阿紀ポジ": "豊永阿紀",
