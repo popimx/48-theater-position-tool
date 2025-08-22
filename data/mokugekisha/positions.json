@@ -15,13 +15,13 @@
     "positionId": "pos03",
     "name": "市村愛里ポジ",
     "firstDayMember": "市村愛里",
-    "experiencedMembers": ["生野莉奈", "石松結菜", "藤野心葉", "森﨑冴彩"]
+    "experiencedMembers": ["生野莉奈", "石松結菜", "藤野心葉", "立花心良", "森﨑冴彩"]
   },
   {
     "positionId": "pos04",
     "name": "伊藤優絵瑠ポジ",
     "firstDayMember": "伊藤優絵瑠",
-    "experiencedMembers": ["生野莉奈", "渋井美奈", "山内祐奈", "井澤美優", "川平聖"]
+    "experiencedMembers": ["生野莉奈", "石松結菜", "渋井美奈", "山内祐奈", "井澤美優", "川平聖"]
   },
   {
     "positionId": "pos05",
@@ -39,7 +39,7 @@
     "positionId": "pos07",
     "name": "川平聖ポジ",
     "firstDayMember": "川平聖",
-    "experiencedMembers": ["渋井美奈", "中野南実", "藤野心葉", "龍頭綺音", "秋吉優花", "井澤美優", "猪原絆愛", "今村麻莉愛", "大庭凜咲", "田中伊桜莉", "片平紗麗", "馬場彩華"]
+    "experiencedMembers": ["渋井美奈", "中野南実", "藤野心葉", "龍頭綺音", "秋吉優花", "井澤美優", "猪原絆愛", "今村麻莉愛", "大庭凜咲", "田中伊桜莉", "猪島莉玲亜", "馬場彩華", "片平紗麗"]
   },
   {
     "positionId": "pos08",
@@ -57,7 +57,7 @@
     "positionId": "pos10",
     "name": "坂本りのポジ",
     "firstDayMember": "坂本りの",
-    "experiencedMembers": ["北川陽彩", "栗山梨奈", "竹本くるみ", "立花心良", "福井可憐", "森﨑冴彩", "江浦優香", "松永悠良"]
+    "experiencedMembers": ["北川陽彩", "江浦優香", "栗山梨奈", "竹本くるみ", "立花心良", "福井可憐", "森﨑冴彩", "松永悠良", "松本苺花"]
   },
   {
     "positionId": "pos11",
