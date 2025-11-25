@@ -1,0 +1,120 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "青原優花ポジ",
+    "firstDayMember": "青原優花",
+    "experiencedMembers": [
+      "青原和花"
+    ]
+  },
+  {
+    "positionId": "pos02",
+    "name": "塩月希依音ポジ",
+    "firstDayMember": "塩月希依音",
+    "experiencedMembers": [
+      "龍本弥生"
+    ]
+  },
+  {
+    "positionId": "pos03",
+    "name": "川上千尋ポジ",
+    "firstDayMember": "川上千尋",
+    "experiencedMembers": [
+      "平山真衣"
+    ]
+  },
+  {
+    "positionId": "pos04",
+    "name": "安部若菜ポジ",
+    "firstDayMember": "安部若菜",
+    "experiencedMembers": [
+      "泉綾乃"
+    ]
+  },
+  {
+    "positionId": "pos05",
+    "name": "新澤菜央ポジ",
+    "firstDayMember": "新澤菜央",
+    "experiencedMembers": [
+      "池田典愛"
+    ]
+  },
+  {
+    "positionId": "pos06",
+    "name": "青原和花ポジ",
+    "firstDayMember": "青原和花",
+    "experiencedMembers": [
+      "田中美空"
+    ]
+  },
+  {
+    "positionId": "pos07",
+    "name": "水田詩織ポジ",
+    "firstDayMember": "水田詩織",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "池帆乃香ポジ",
+    "firstDayMember": "池帆乃香",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos09",
+    "name": "龍本弥生ポジ",
+    "firstDayMember": "龍本弥生",
+    "experiencedMembers": [
+      "竹田京加"
+    ]
+  },
+  {
+    "positionId": "pos10",
+    "name": "高橋ことねポジ",
+    "firstDayMember": "高橋ことね",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos11",
+    "name": "坂本理紗ポジ",
+    "firstDayMember": "坂本理紗",
+    "experiencedMembers": [
+      "西田帆花"
+    ]
+  },
+  {
+    "positionId": "pos12",
+    "name": "吉見純音ポジ",
+    "firstDayMember": "吉見純音",
+    "experiencedMembers": [
+      "黒島咲花"
+    ]
+  },
+  {
+    "positionId": "pos13",
+    "name": "田中美空ポジ",
+    "firstDayMember": "田中美空",
+    "experiencedMembers": [
+      "中川朋香"
+    ]
+  },
+  {
+    "positionId": "pos14",
+    "name": "西由真ポジ",
+    "firstDayMember": "西由真",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos15",
+    "name": "衣笠彩実ポジ",
+    "firstDayMember": "衣笠彩実",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos16",
+    "name": "石山千尋ポジ",
+    "firstDayMember": "石山千尋",
+    "experiencedMembers": [
+      "宮崎紗衣"
+    ]
+  }
+]
