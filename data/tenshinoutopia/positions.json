@@ -33,7 +33,7 @@
     "positionId": "pos06",
     "name": "山本望叶ポジ",
     "firstDayMember": "山本望叶",
-    "experiencedMembers": []
+    "experiencedMembers": ["青原優花"]
   },
   {
     "positionId": "pos07",
@@ -63,13 +63,13 @@
     "positionId": "pos11",
     "name": "芳賀礼ポジ",
     "firstDayMember": "芳賀礼",
-    "experiencedMembers": ["坂下真心"]
+    "experiencedMembers": ["坂下真心", "三鴨くるみ"]
   },
   {
     "positionId": "pos12",
     "name": "桜田彩叶ポジ",
     "firstDayMember": "桜田彩叶",
-    "experiencedMembers": ["和田海佑", "坂下真心"]
+    "experiencedMembers": ["坂下真心", "和田海佑"]
   },
   {
     "positionId": "pos13",
