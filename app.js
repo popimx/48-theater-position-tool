@@ -5,11 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   assignBtn.addEventListener('click', async () => {
     resultDiv.innerHTML = '割り当て中...';
 
-    // 改行も「・」も両方サポートして区切る
+    // 入力を改行、読点「、」、中黒「・」で区切る
     const input = document.getElementById('member-input').value;
     const members = input
-      .replace(/\n/g, '・')
-      .split('・')
+      .split(/[\n、・]/)   // 改行、読点「、」、中黒「・」で分割
       .map(name => name.trim())
       .filter(name => name !== '');
 
