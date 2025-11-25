@@ -1,0 +1,101 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "相川暖花ポジ",
+    "firstDayMember": "相川暖花",
+    "experiencedMembers": [
+      "桒原椿",
+      "松川みゆ"
+    ]
+  },
+  {
+    "positionId": "pos02",
+    "name": "石黒友月ポジ",
+    "firstDayMember": "石黒友月",
+    "experiencedMembers": [
+      "松川みゆ",
+      "山村さくら",
+      "近藤海琴"
+    ]
+  },
+  {
+    "positionId": "pos03",
+    "name": "伊藤虹々美ポジ",
+    "firstDayMember": "伊藤虹々美",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos04",
+    "name": "入内嶋涼ポジ",
+    "firstDayMember": "入内嶋涼",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos05",
+    "name": "熊崎晴香ポジ",
+    "firstDayMember": "熊崎晴香",
+    "experiencedMembers": [
+      "倉島杏実"
+    ]
+  },
+  {
+    "positionId": "pos06",
+    "name": "倉島杏実ポジ",
+    "firstDayMember": "倉島杏実",
+    "experiencedMembers": [
+      "石黒友月"
+    ]
+  },
+  {
+    "positionId": "pos07",
+    "name": "坂本真凛ポジ",
+    "firstDayMember": "坂本真凛",
+    "experiencedMembers": [
+      "鈴木恋奈",
+      "倉本羽菜",
+      "井田玲音名",
+      "太田愛恵"
+    ]
+  },
+  {
+    "positionId": "pos08",
+    "name": "杉本りいなポジ",
+    "firstDayMember": "杉本りいな",
+    "experiencedMembers": [
+      "桒原椿"
+    ]
+  },
+  {
+    "positionId": "pos09",
+    "name": "鈴木恋奈ポジ",
+    "firstDayMember": "鈴木恋奈",
+    "experiencedMembers": [
+      "南澤恋々"
+    ]
+  },
+  {
+    "positionId": "pos10",
+    "name": "中野愛理ポジ",
+    "firstDayMember": "中野愛理",
+    "experiencedMembers": [
+      "石黒友月",
+      "杉本りいな"
+    ]
+  },
+  {
+    "positionId": "pos11",
+    "name": "野村実代ポジ",
+    "firstDayMember": "野村実代",
+    "experiencedMembers": [
+      "坂本真凛"
+    ]
+  },
+  {
+    "positionId": "pos12",
+    "name": "原優寧ポジ",
+    "firstDayMember": "原優寧",
+    "experiencedMembers": [
+      "松川みゆ"
+    ]
+  }
+]
