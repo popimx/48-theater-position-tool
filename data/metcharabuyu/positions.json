@@ -1,0 +1,117 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "芳賀礼ポジ",
+    "firstDayMember": "芳賀礼",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos02",
+    "name": "坂田心咲ポジ",
+    "firstDayMember": "坂田心咲",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos03",
+    "name": "泉綾乃ポジ",
+    "firstDayMember": "泉綾乃",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos04",
+    "name": "桜田彩叶ポジ",
+    "firstDayMember": "桜田彩叶",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos05",
+    "name": "坂下真心ポジ",
+    "firstDayMember": "坂下真心",
+    "experiencedMembers": [
+      "塩月希依音",
+      "宮本杏海"
+    ]
+  },
+  {
+    "positionId": "pos06",
+    "name": "平山真衣ポジ",
+    "firstDayMember": "平山真衣",
+    "experiencedMembers": [
+      "板垣心和"
+    ]
+  },
+  {
+    "positionId": "pos07",
+    "name": "三鴨くるみポジ",
+    "firstDayMember": "三鴨くるみ",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "池田典愛ポジ",
+    "firstDayMember": "池田典愛",
+    "experiencedMembers": [
+      "西田帆花"
+    ]
+  },
+  {
+    "positionId": "pos09",
+    "name": "板垣心和ポジ",
+    "firstDayMember": "板垣心和",
+    "experiencedMembers": [
+      "田中雪乃"
+    ]
+  },
+  {
+    "positionId": "pos10",
+    "name": "松岡さくらポジ",
+    "firstDayMember": "松岡さくら",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos11",
+    "name": "宮本杏海ポジ",
+    "firstDayMember": "宮本杏海",
+    "experiencedMembers": [
+      "中川朋香"
+    ]
+  },
+  {
+    "positionId": "pos12",
+    "name": "西田帆花ポジ",
+    "firstDayMember": "西田帆花",
+    "experiencedMembers": [
+      "吉見純音"
+    ]
+  },
+  {
+    "positionId": "pos13",
+    "name": "松本海日菜ポジ",
+    "firstDayMember": "松本海日菜",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos14",
+    "name": "西島梨央ポジ",
+    "firstDayMember": "西島梨央",
+    "experiencedMembers": [
+      "竹田京加"
+    ]
+  },
+  {
+    "positionId": "pos15",
+    "name": "中川朋香ポジ",
+    "firstDayMember": "中川朋香",
+    "experiencedMembers": [
+      "村井悠莉"
+    ]
+  },
+  {
+    "positionId": "pos16",
+    "name": "竹田京加ポジ",
+    "firstDayMember": "竹田京加",
+    "experiencedMembers": [
+      "宮原心音"
+    ]
+  }
+]
