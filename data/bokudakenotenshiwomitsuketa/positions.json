@@ -1,0 +1,56 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "秋吉優花ポジ",
+    "firstDayMember": "秋吉優花",
+    "experiencedMembers": ["今村麻莉愛"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "江浦優香ポジ",
+    "firstDayMember": "江浦優香",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos03",
+    "name": "江口心々華ポジ",
+    "firstDayMember": "江口心々華",
+    "experiencedMembers": ["大内梨果"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "栗山梨奈ポジ",
+    "firstDayMember": "栗山梨奈",
+    "experiencedMembers": ["田中伊桜莉"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "立花心良ポジ",
+    "firstDayMember": "立花心良",
+    "experiencedMembers": ["猪原絆愛"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "地頭江音々ポジ",
+    "firstDayMember": "地頭江音々",
+    "experiencedMembers": ["竹本くるみ"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "福井可憐ポジ",
+    "firstDayMember": "福井可憐",
+    "experiencedMembers": ["大庭凜咲"]
+  },
+  {
+    "positionId": "pos08",
+    "name": "森﨑冴彩ポジ",
+    "firstDayMember": "森﨑冴彩",
+    "experiencedMembers": ["井澤美優"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "安井妃奈ポジ",
+    "firstDayMember": "安井妃奈",
+    "experiencedMembers": []
+  }
+]
