@@ -1,0 +1,56 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "生野莉奈ポジ",
+    "firstDayMember": "生野莉奈",
+    "experiencedMembers": ["藤野心葉"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "石橋颯ポジ",
+    "firstDayMember": "石橋颯",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos03",
+    "name": "石松結菜ポジ",
+    "firstDayMember": "石松結菜",
+    "experiencedMembers": ["渋井美奈"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "北川陽彩ポジ",
+    "firstDayMember": "北川陽彩",
+    "experiencedMembers": ["市村愛里"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "栗原紗英ポジ",
+    "firstDayMember": "栗原紗英",
+    "experiencedMembers": ["梁瀬鈴雅"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "豊永阿紀ポジ",
+    "firstDayMember": "豊永阿紀",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos07",
+    "name": "中野南実ポジ",
+    "firstDayMember": "中野南実",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "藤野心葉ポジ",
+    "firstDayMember": "藤野心葉",
+    "experiencedMembers": ["坂本りの", "山内祐奈"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "龍頭綺音ポジ",
+    "firstDayMember": "龍頭綺音",
+    "experiencedMembers": []
+  }
+]
