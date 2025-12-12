@@ -1,4 +1,4 @@
-[
+ [
   {
     "positionId": "pos01",
     "name": "伊藤虹々美ポジ",
@@ -39,13 +39,13 @@
     "positionId": "pos07",
     "name": "川村昇子ポジ",
     "firstDayMember": "川村昇子",
-    "experiencedMembers": ["横井志穂"]
+    "experiencedMembers": ["福原心春", "横井志穂"]
   },
   {
     "positionId": "pos08",
     "name": "雲井紗菜ポジ",
     "firstDayMember": "雲井紗菜",
-    "experiencedMembers": ["横井志穂"]
+    "experiencedMembers": ["川村昇子", "横井志穂"]
   },
   {
     "positionId": "pos09",
