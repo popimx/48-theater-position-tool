@@ -3,7 +3,7 @@
     "positionId": "pos01",
     "name": "芳賀礼ポジ",
     "firstDayMember": "芳賀礼",
-    "experiencedMembers": []
+    "experiencedMembers": ["坂下真心"]
   },
   {
     "positionId": "pos02",
@@ -45,7 +45,7 @@
     "positionId": "pos08",
     "name": "池田典愛ポジ",
     "firstDayMember": "池田典愛",
-    "experiencedMembers": ["西田帆花"]
+    "experiencedMembers": ["青原和花", "西田帆花"]
   },
   {
     "positionId": "pos09",
