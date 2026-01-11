@@ -3,97 +3,48 @@
     "positionId": "pos01",
     "name": "岩立沙穂ポジ",
     "firstDayMember": "岩立沙穂",
-    "experiencedMembers": [
-      "太田有紀",
-      "鈴木くるみ",
-      "長友彩海",
-      "永野芹佳",
-      "成田香姫奈"
-    ]
+    "experiencedMembers": ["太田有紀", "鈴木くるみ", "長友彩海", "永野芹佳", "成田香姫奈"]
   },
   {
     "positionId": "pos02",
     "name": "大盛真歩ポジ",
     "firstDayMember": "大盛真歩",
-    "experiencedMembers": [
-      "工藤華純",
-      "倉野尾成美",
-      "髙橋彩音",
-      "長友彩海",
-      "山内瑞葵",
-      "山﨑空",
-      "花田藍衣",
-      "込山榛香",
-      "村山彩希"
-    ]
+    "experiencedMembers": ["工藤華純", "倉野尾成美", "髙橋彩音", "長友彩海", "山内瑞葵", "山﨑空", "花田藍衣", "込山榛香", "村山彩希"]
   },
   {
     "positionId": "pos03",
     "name": "坂川陽香ポジ",
     "firstDayMember": "坂川陽香",
-    "experiencedMembers": [
-      "秋山由奈",
-      "橋本恵理子",
-      "橋本陽菜",
-      "川村結衣"
-    ]
+    "experiencedMembers": ["秋山由奈", "橋本恵理子", "橋本陽菜", "川村結衣"]
   },
   {
     "positionId": "pos04",
     "name": "田口愛佳ポジ",
     "firstDayMember": "田口愛佳",
-    "experiencedMembers": [
-      "工藤華純",
-      "久保姫菜乃",
-      "下尾みう",
-      "福岡聖菜",
-      "正鋳真優"
-    ]
+    "experiencedMembers": ["工藤華純", "久保姫菜乃", "坂川陽香", "下尾みう", "福岡聖菜", "正鋳真優"]
   },
   {
     "positionId": "pos05",
     "name": "徳永羚海ポジ",
     "firstDayMember": "徳永羚海",
-    "experiencedMembers": [
-      "長友彩海",
-      "橋本陽菜",
-      "畠山希美",
-      "水島美結",
-      "山口結愛"
-    ]
+    "experiencedMembers": ["久保姫菜乃", "長友彩海", "橋本陽菜", "畠山希美", "水島美結", "山口結愛"]
   },
   {
     "positionId": "pos06",
     "name": "長友彩海ポジ",
     "firstDayMember": "長友彩海",
-    "experiencedMembers": [
-      "迫由芽実",
-      "佐藤綺星",
-      "橋本陽菜",
-      "向井地美音"
-    ]
+    "experiencedMembers": ["迫由芽実", "佐藤綺星", "徳永羚海", "橋本陽菜", "向井地美音"]
   },
   {
     "positionId": "pos07",
     "name": "正鋳真優ポジ",
     "firstDayMember": "正鋳真優",
-    "experiencedMembers": [
-      "新井彩永",
-      "岩立沙穂",
-      "鈴木くるみ",
-      "平田侑希"
-    ]
+    "experiencedMembers": ["新井彩永", "岩立沙穂", "鈴木くるみ", "平田侑希"]
   },
   {
     "positionId": "pos08",
     "name": "武藤小麟ポジ",
     "firstDayMember": "武藤小麟",
-    "experiencedMembers": [
-      "倉野尾成美",
-      "橋本陽菜",
-      "福岡聖菜",
-      "布袋百椛",
-      "八木愛月"
-    ]
+    "experiencedMembers": ["倉野尾成美", "橋本陽菜", "福岡聖菜", "布袋百椛", "水島美結", "八木愛月", "近藤沙樹"]
   }
 ]
