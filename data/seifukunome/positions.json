@@ -15,7 +15,7 @@
     "positionId": "pos03",
     "name": "杉本りいなポジ",
     "firstDayMember": "杉本りいな",
-    "experiencedMembers": ["倉本羽菜", "近藤海琴", "井田玲音名", "佐々木希美", "柿元礼愛"]
+    "experiencedMembers": ["南澤恋々", "奥野心羽", "倉本羽菜", "近藤海琴", "井田玲音名", "佐々木希美", "柿元礼愛"]
   },
   {
     "positionId": "pos04",
@@ -39,7 +39,7 @@
     "positionId": "pos07",
     "name": "奥野心羽ポジ",
     "firstDayMember": "奥野心羽",
-    "experiencedMembers": ["篠原京香", "太田愛恵", "西井美桜", "久保田怜", "北野瑠華"]
+    "experiencedMembers": ["篠原京香", "相川暖花", "太田愛恵", "西井美桜", "久保田怜", "北野瑠華"]
   },
   {
     "positionId": "pos08",
@@ -54,10 +54,10 @@
     "experiencedMembers": ["南澤恋々", "長谷川雅", "石黒友月", "岡本彩夏", "上村亜柚香"]
   },
   {
-    "positionId": "pos10",
+    "positionId":="pos10",
     "name": "倉本羽菜ポジ",
     "firstDayMember": "倉本羽菜",
-    "experiencedMembers": ["原優寧", "河村優愛", "赤堀君江"]
+    "experiencedMembers": ["原優寧", "河村優愛", "赤堀君江", "太田愛恵"]
   },
   {
     "positionId": "pos11",
@@ -69,6 +69,6 @@
     "positionId": "pos12",
     "name": "松川みゆポジ",
     "firstDayMember": "松川みゆ",
-    "experiencedMembers": ["倉本羽菜", "近藤海琴", "加藤皐生"]
+    "experiencedMembers": ["倉本羽菜", "近藤海琴", "川村昇子", "加藤皐生"]
   }
 ]
