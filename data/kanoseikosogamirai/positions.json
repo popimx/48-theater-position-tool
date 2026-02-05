@@ -1,57 +1,57 @@
- [
+[
   {
-    "positionId": "pos01",
+    "positionId": "pos1",
     "name": "伊藤虹々美ポジ",
     "firstDayMember": "伊藤虹々美",
-    "experiencedMembers": ["太田愛恵"]
+    "experiencedMembers": ["太田愛恵", "宮本倫花"]
   },
   {
-    "positionId": "pos02",
+    "positionId": "pos2",
     "name": "松川みゆポジ",
     "firstDayMember": "松川みゆ",
     "experiencedMembers": ["佐々木希美"]
   },
   {
-    "positionId": "pos03",
+    "positionId": "pos3",
     "name": "奥野心羽ポジ",
     "firstDayMember": "奥野心羽",
-    "experiencedMembers": ["佐々木希美"]
+    "experiencedMembers": ["川村昇子", "佐々木希美"]
   },
   {
-    "positionId": "pos04",
+    "positionId": "pos4",
     "name": "河村優愛ポジ",
     "firstDayMember": "河村優愛",
-    "experiencedMembers": ["倉本羽菜"]
+    "experiencedMembers": ["倉本羽菜", "佐々木希美"]
   },
   {
-    "positionId": "pos05",
+    "positionId": "pos5",
     "name": "長谷川雅ポジ",
     "firstDayMember": "長谷川雅",
     "experiencedMembers": ["近藤海琴", "久保田怜"]
   },
   {
-    "positionId": "pos06",
+    "positionId": "pos6",
     "name": "太田愛恵ポジ",
     "firstDayMember": "太田愛恵",
-    "experiencedMembers": ["宮本倫花"]
+    "experiencedMembers": ["福原心春", "宮本倫花"]
   },
   {
-    "positionId": "pos07",
+    "positionId": "pos7",
     "name": "川村昇子ポジ",
     "firstDayMember": "川村昇子",
     "experiencedMembers": ["福原心春", "横井志穂"]
   },
   {
-    "positionId": "pos08",
+    "positionId": "pos8",
     "name": "雲井紗菜ポジ",
     "firstDayMember": "雲井紗菜",
     "experiencedMembers": ["川村昇子", "横井志穂"]
   },
   {
-    "positionId": "pos09",
+    "positionId": "pos9",
     "name": "倉本羽菜ポジ",
     "firstDayMember": "倉本羽菜",
-    "experiencedMembers": ["久保田怜", "立花菖"]
+    "experiencedMembers": ["太田愛恵", "久保田怜", "立花菖"]
   },
   {
     "positionId": "pos10",
@@ -69,6 +69,6 @@
     "positionId": "pos12",
     "name": "南澤恋々ポジ",
     "firstDayMember": "南澤恋々",
-    "experiencedMembers": []
+    "experiencedMembers": ["田村真悠"]
   }
 ]
