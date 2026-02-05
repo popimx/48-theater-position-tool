@@ -1,4 +1,4 @@
- [
+[
   {
     "positionId": "pos01",
     "name": "芳賀礼ポジ",
@@ -15,7 +15,7 @@
     "positionId": "pos03",
     "name": "泉綾乃ポジ",
     "firstDayMember": "泉綾乃",
-    "experiencedMembers": ["三鴨くるみ"]
+    "experiencedMembers": ["田中雪乃", "三鴨くるみ"]
   },
   {
     "positionId": "pos04",
@@ -27,7 +27,7 @@
     "positionId": "pos05",
     "name": "坂下真心ポジ",
     "firstDayMember": "坂下真心",
-    "experiencedMembers": ["塩月希依音", "宮本杏海"]
+    "experiencedMembers": ["坂本理紗", "塩月希依音", "宮本杏海"]
   },
   {
     "positionId": "pos06",
@@ -39,7 +39,7 @@
     "positionId": "pos07",
     "name": "三鴨くるみポジ",
     "firstDayMember": "三鴨くるみ",
-    "experiencedMembers": ["石山千尋", "龍本弥生"]
+    "experiencedMembers": ["石山千尋", "龍本弥生", "西島梨央"]
   },
   {
     "positionId": "pos08",
@@ -57,13 +57,13 @@
     "positionId": "pos10",
     "name": "松岡さくらポジ",
     "firstDayMember": "松岡さくら",
-    "experiencedMembers": ["竹田京加", "中川朋香"]
+    "experiencedMembers": ["青原和花", "竹田京加", "中川朋香"]
   },
   {
     "positionId": "pos11",
     "name": "宮本杏海ポジ",
     "firstDayMember": "宮本杏海",
-    "experiencedMembers": ["中川朋香"]
+    "experiencedMembers": ["竹田京加", "中川朋香"]
   },
   {
     "positionId": "pos12",
@@ -87,12 +87,12 @@
     "positionId": "pos15",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
-    "experiencedMembers": ["村井悠莉"]
+    "experiencedMembers": ["衣笠彩実", "新澤菜央", "村井悠莉"]
   },
   {
     "positionId": "pos16",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
-    "experiencedMembers": ["宮原心音"]
+    "experiencedMembers": ["田中ミリア", "宮原心音"]
   }
 ]
