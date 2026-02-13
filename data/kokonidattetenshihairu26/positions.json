@@ -1,0 +1,98 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "坂田心咲ポジ",
+    "firstDayMember": "坂田心咲",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos02",
+    "name": "青原優花ポジ",
+    "firstDayMember": "青原優花",
+    "experiencedMembers": ["塩月希依音"]
+  },
+  {
+    "positionId": "pos03",
+    "name": "芳賀礼ポジ",
+    "firstDayMember": "芳賀礼",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos04",
+    "name": "桜田彩叶ポジ",
+    "firstDayMember": "桜田彩叶",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos05",
+    "name": "三鴨くるみポジ",
+    "firstDayMember": "三鴨くるみ",
+    "experiencedMembers": ["水田詩織"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "坂下真心ポジ",
+    "firstDayMember": "坂下真心",
+    "experiencedMembers": ["池田典愛"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "龍本弥生ポジ",
+    "firstDayMember": "龍本弥生",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "青原和花ポジ",
+    "firstDayMember": "青原和花",
+    "experiencedMembers": ["宮本杏海"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "田中雪乃ポジ",
+    "firstDayMember": "田中雪乃",
+    "experiencedMembers": ["坂本理紗"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "板垣心和ポジ",
+    "firstDayMember": "板垣心和",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos11",
+    "name": "池帆乃香ポジ",
+    "firstDayMember": "池帆乃香",
+    "experiencedMembers": ["吉見純音"]
+  },
+  {
+    "positionId": "pos12",
+    "name": "松岡さくらポジ",
+    "firstDayMember": "松岡さくら",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos13",
+    "name": "高橋ことねポジ",
+    "firstDayMember": "高橋ことね",
+    "experiencedMembers": ["西田帆花"]
+  },
+  {
+    "positionId": "pos14",
+    "name": "福野杏実ポジ",
+    "firstDayMember": "福野杏実",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos15",
+    "name": "舟橋礼菜ポジ",
+    "firstDayMember": "舟橋礼菜",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos16",
+    "name": "黒島咲花ポジ",
+    "firstDayMember": "黒島咲花",
+    "experiencedMembers": []
+  }
+]
