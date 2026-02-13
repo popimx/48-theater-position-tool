@@ -21,7 +21,7 @@
     "positionId": "pos04",
     "name": "桜田彩叶ポジ",
     "firstDayMember": "桜田彩叶",
-    "experiencedMembers": ["松岡さくら"]
+    "experiencedMembers": ["青原優花", "松岡さくら"]
   },
   {
     "positionId": "pos05",
@@ -63,7 +63,7 @@
     "positionId": "pos11",
     "name": "宮本杏海ポジ",
     "firstDayMember": "宮本杏海",
-    "experiencedMembers": ["竹田京加", "中川朋香"]
+    "experiencedMembers": ["竹田京加", "田中美空", "中川朋香"]
   },
   {
     "positionId": "pos12",
@@ -93,6 +93,6 @@
     "positionId": "pos16",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
-    "experiencedMembers": ["田中ミリア", "宮原心音"]
+    "experiencedMembers": ["青原和花", "田中ミリア", "宮原心音"]
   }
 ]
