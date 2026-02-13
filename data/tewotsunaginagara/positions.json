@@ -1,0 +1,50 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "伊藤百花ポジ",
+    "firstDayMember": "伊藤百花",
+    "experiencedMembers": ["牧戸愛茉"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "奥本カイリポジ",
+    "firstDayMember": "奥本カイリ",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos03",
+    "name": "川村結衣ポジ",
+    "firstDayMember": "川村結衣",
+    "experiencedMembers": ["髙橋舞桜"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "白鳥沙怜ポジ",
+    "firstDayMember": "白鳥沙怜",
+    "experiencedMembers": ["田中沙友利"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "花田藍衣ポジ",
+    "firstDayMember": "花田藍衣",
+    "experiencedMembers": ["渡邉葵心"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "大賀彩姫ポジ",
+    "firstDayMember": "大賀彩姫",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos07",
+    "name": "近藤沙樹ポジ",
+    "firstDayMember": "近藤沙樹",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos08",
+    "name": "丸山ひなたポジ",
+    "firstDayMember": "丸山ひなた",
+    "experiencedMembers": ["森川優"]
+  }
+]
