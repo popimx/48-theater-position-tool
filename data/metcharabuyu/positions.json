@@ -3,7 +3,7 @@
     "positionId": "pos01",
     "name": "芳賀礼ポジ",
     "firstDayMember": "芳賀礼",
-    "experiencedMembers": ["坂下真心"]
+    "experiencedMembers": ["坂下真心", "松岡さくら"]
   },
   {
     "positionId": "pos02",
@@ -33,7 +33,7 @@
     "positionId": "pos06",
     "name": "平山真衣ポジ",
     "firstDayMember": "平山真衣",
-    "experiencedMembers": ["板垣心和"]
+    "experiencedMembers": ["板垣心和", "村井悠莉"]
   },
   {
     "positionId": "pos07",
@@ -51,7 +51,7 @@
     "positionId": "pos09",
     "name": "板垣心和ポジ",
     "firstDayMember": "板垣心和",
-    "experiencedMembers": ["田中雪乃"]
+    "experiencedMembers": ["田中雪乃", "松本海日菜"]
   },
   {
     "positionId": "pos10",
@@ -75,7 +75,7 @@
     "positionId": "pos13",
     "name": "松本海日菜ポジ",
     "firstDayMember": "松本海日菜",
-    "experiencedMembers": []
+    "experiencedMembers": ["山口美桜"]
   },
   {
     "positionId": "pos14",
@@ -87,7 +87,7 @@
     "positionId": "pos15",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
-    "experiencedMembers": ["衣笠彩実", "新澤菜央", "村井悠莉"]
+    "experiencedMembers": ["衣笠彩実", "新澤菜央", "宮崎紗衣", "村井悠莉"]
   },
   {
     "positionId": "pos16",
