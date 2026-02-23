@@ -1,9 +1,9 @@
- [
+[
   {
     "positionId": "pos01",
     "name": "青原優花ポジ",
     "firstDayMember": "青原優花",
-    "experiencedMembers": ["青原和花"]
+    "experiencedMembers": ["青原和花", "坂田心咲"]
   },
   {
     "positionId": "pos02",
@@ -21,7 +21,7 @@
     "positionId": "pos04",
     "name": "安部若菜ポジ",
     "firstDayMember": "安部若菜",
-    "experiencedMembers": ["泉綾乃", "吉見純音"]
+    "experiencedMembers": ["泉綾乃", "坂下真心", "吉見純音"]
   },
   {
     "positionId": "pos05",
@@ -45,7 +45,7 @@
     "positionId": "pos08",
     "name": "池帆乃香ポジ",
     "firstDayMember": "池帆乃香",
-    "experiencedMembers": ["板垣心和"]
+    "experiencedMembers": ["板垣心和", "宮本杏海"]
   },
   {
     "positionId": "pos09",
