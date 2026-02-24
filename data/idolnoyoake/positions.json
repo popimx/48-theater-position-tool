@@ -1,0 +1,50 @@
+[
+  {
+    "positionId": "pos1",
+    "name": "尾崎世里花ポジ",
+    "firstDayMember": "尾崎世里花",
+    "experiencedMembers": ["渡辺菜月", "北澤苺"]
+  },
+  {
+    "positionId": "pos2",
+    "name": "信濃宙花ポジ",
+    "firstDayMember": "信濃宙花",
+    "experiencedMembers": ["池田裕楽", "内海里音", "新井梨杏"]
+  },
+  {
+    "positionId": "pos3",
+    "name": "曽川咲葵ポジ",
+    "firstDayMember": "曽川咲葵",
+    "experiencedMembers": ["石田千穂", "迫姫華", "久留島優果"]
+  },
+  {
+    "positionId": "pos4",
+    "name": "高雄さやかポジ",
+    "firstDayMember": "高雄さやか",
+    "experiencedMembers": ["岡田あずみ", "濵田響"]
+  },
+  {
+    "positionId": "pos5",
+    "name": "中村舞ポジ",
+    "firstDayMember": "中村舞",
+    "experiencedMembers": ["兵頭葵", "迫姫華", "岡村梨央"]
+  },
+  {
+    "positionId": "pos6",
+    "name": "原田清花ポジ",
+    "firstDayMember": "原田清花",
+    "experiencedMembers": ["諸葛望愛", "濵田響", "森末妃奈"]
+  },
+  {
+    "positionId": "pos7",
+    "name": "福田朱里ポジ",
+    "firstDayMember": "福田朱里",
+    "experiencedMembers": ["工藤理子", "石原侑奈", "奥田唯菜"]
+  },
+  {
+    "positionId": "pos8",
+    "name": "吉田彩良ポジ",
+    "firstDayMember": "吉田彩良",
+    "experiencedMembers": ["谷口茉妃菜", "宗雪里香"]
+  }
+]
