@@ -9,7 +9,7 @@
     "positionId": "pos2",
     "name": "松川みゆポジ",
     "firstDayMember": "松川みゆ",
-    "experiencedMembers": ["佐々木希美"]
+    "experiencedMembers": ["南澤恋々", "佐々木希美"]
   },
   {
     "positionId": "pos3",
@@ -69,6 +69,6 @@
     "positionId": "pos12",
     "name": "南澤恋々ポジ",
     "firstDayMember": "南澤恋々",
-    "experiencedMembers": ["田村真悠"]
+    "experiencedMembers": ["田村真悠", "聖遥花"]
   }
 ]
