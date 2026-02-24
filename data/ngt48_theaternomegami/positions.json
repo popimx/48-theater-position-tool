@@ -1,0 +1,80 @@
+[
+  {
+    "positionId": "pos1",
+    "name": "清司麗菜ポジ",
+    "firstDayMember": "清司麗菜",
+    "experiencedMembers": ["原愛実", "阿達夢"]
+  },
+  {
+    "positionId": "pos2",
+    "name": "西潟茉莉奈ポジ",
+    "firstDayMember": "西潟茉莉奈",
+    "experiencedMembers": ["新沢葵唯"]
+  },
+  {
+    "positionId": "pos3",
+    "name": "佐藤海里ポジ",
+    "firstDayMember": "佐藤海里",
+    "experiencedMembers": ["木本杏菜", "吉原愛里衣"]
+  },
+  {
+    "positionId": "pos4",
+    "name": "藤崎未夢ポジ",
+    "firstDayMember": "藤崎未夢",
+    "experiencedMembers": ["佐藤広花"]
+  },
+  {
+    "positionId": "pos5",
+    "name": "大塚七海ポジ",
+    "firstDayMember": "大塚七海",
+    "experiencedMembers": ["磯崎菜々"]
+  },
+  {
+    "positionId": "pos6",
+    "name": "三村妃乃ポジ",
+    "firstDayMember": "三村妃乃",
+    "experiencedMembers": ["佐藤広花", "高島柚愛"]
+  },
+  {
+    "positionId": "pos7",
+    "name": "磯部瑠紅ポジ",
+    "firstDayMember": "磯部瑠紅",
+    "experiencedMembers": ["高島柚愛"]
+  },
+  {
+    "positionId": "pos8",
+    "name": "喜多花恵ポジ",
+    "firstDayMember": "喜多花恵",
+    "experiencedMembers": ["磯崎菜々", "阿達夢"]
+  },
+  {
+    "positionId": "pos9",
+    "name": "北村優羽ポジ",
+    "firstDayMember": "北村優羽",
+    "experiencedMembers": ["木本杏菜", "安座間結"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "木本優菜ポジ",
+    "firstDayMember": "木本優菜",
+    "experiencedMembers": ["磯崎菜々", "原愛実"]
+  },
+  {
+    "positionId": "pos11",
+    "name": "杉本萌ポジ",
+    "firstDayMember": "杉本萌",
+    "experiencedMembers": ["新沢葵唯"]
+  },
+  {
+    "positionId": "pos12",
+    "name": "鈴木凛々花ポジ",
+    "firstDayMember": "鈴木凛々花",
+    "experiencedMembers": ["佐藤広花", "甲斐瑞季"]
+  },
+  {
+    "positionId": "pos13",
+    "name": "木本杏菜ポジ",
+    "firstDayMember": "木本杏菜",
+    "experiencedMembers": ["水津菜月", "北澤百音"]
+  }
+]
