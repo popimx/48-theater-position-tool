@@ -1,0 +1,98 @@
+[
+  {
+    "positionId": "pos1",
+    "name": "岡腰星来ポジ",
+    "firstDayMember": "岡腰星来",
+    "experiencedMembers": ["竹田京加"]
+  },
+  {
+    "positionId": "pos2",
+    "name": "三鴨くるみポジ",
+    "firstDayMember": "三鴨くるみ",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos3",
+    "name": "竹田京加ポジ",
+    "firstDayMember": "竹田京加",
+    "experiencedMembers": ["村井悠莉"]
+  },
+  {
+    "positionId": "pos4",
+    "name": "桜井ひまりポジ",
+    "firstDayMember": "桜井ひまり",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos5",
+    "name": "中川朋香ポジ",
+    "firstDayMember": "中川朋香",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos6",
+    "name": "赤松昊ポジ",
+    "firstDayMember": "赤松昊",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos7",
+    "name": "石山千尋ポジ",
+    "firstDayMember": "石山千尋",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos8",
+    "name": "高橋ことねポジ",
+    "firstDayMember": "高橋ことね",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos9",
+    "name": "村井悠莉ポジ",
+    "firstDayMember": "村井悠莉",
+    "experiencedMembers": ["宮原心音"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "田中れいポジ",
+    "firstDayMember": "田中れい",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos11",
+    "name": "谷口詩乃ポジ",
+    "firstDayMember": "谷口詩乃",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos12",
+    "name": "宮原心音ポジ",
+    "firstDayMember": "宮原心音",
+    "experiencedMembers": ["山口美桜"]
+  },
+  {
+    "positionId": "pos13",
+    "name": "内田愛彩ポジ",
+    "firstDayMember": "内田愛彩",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos14",
+    "name": "木根彩呂花ポジ",
+    "firstDayMember": "木根彩呂花",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos15",
+    "name": "高橋樹奈ポジ",
+    "firstDayMember": "高橋樹奈",
+    "experiencedMembers": []
+  },
+  {
+    "positionId": "pos16",
+    "name": "和田承子ポジ",
+    "firstDayMember": "和田承子",
+    "experiencedMembers": []
+  }
+]
