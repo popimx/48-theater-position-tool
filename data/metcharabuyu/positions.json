@@ -1,54 +1,54 @@
- [
+[
   {
-    "positionId": "pos01",
+    "positionId": "pos1",
     "name": "芳賀礼ポジ",
     "firstDayMember": "芳賀礼",
-    "experiencedMembers": ["坂下真心", "松岡さくら"]
+    "experiencedMembers": ["坂下真心", "桜田彩叶", "松岡さくら"]
   },
   {
-    "positionId": "pos02",
+    "positionId": "pos2",
     "name": "坂田心咲ポジ",
     "firstDayMember": "坂田心咲",
     "experiencedMembers": ["板垣心和", "桜田彩叶"]
   },
   {
-    "positionId": "pos03",
+    "positionId": "pos3",
     "name": "泉綾乃ポジ",
     "firstDayMember": "泉綾乃",
     "experiencedMembers": ["田中雪乃", "三鴨くるみ"]
   },
   {
-    "positionId": "pos04",
+    "positionId": "pos4",
     "name": "桜田彩叶ポジ",
     "firstDayMember": "桜田彩叶",
-    "experiencedMembers": ["青原優花", "松岡さくら"]
+    "experiencedMembers": ["青原優花", "松岡さくら", "松本海日菜"]
   },
   {
-    "positionId": "pos05",
+    "positionId": "pos5",
     "name": "坂下真心ポジ",
     "firstDayMember": "坂下真心",
-    "experiencedMembers": ["坂本理紗", "塩月希依音", "宮本杏海"]
+    "experiencedMembers": ["池田典愛", "坂本理紗", "塩月希依音", "宮本杏海"]
   },
   {
-    "positionId": "pos06",
+    "positionId": "pos6",
     "name": "平山真衣ポジ",
     "firstDayMember": "平山真衣",
     "experiencedMembers": ["板垣心和", "村井悠莉"]
   },
   {
-    "positionId": "pos07",
+    "positionId": "pos7",
     "name": "三鴨くるみポジ",
     "firstDayMember": "三鴨くるみ",
     "experiencedMembers": ["石山千尋", "龍本弥生", "西島梨央", "西田帆花"]
   },
   {
-    "positionId": "pos08",
+    "positionId": "pos8",
     "name": "池田典愛ポジ",
     "firstDayMember": "池田典愛",
-    "experiencedMembers": ["青原和花", "西田帆花"]
+    "experiencedMembers": ["青原和花", "西田帆花", "宮原心音"]
   },
   {
-    "positionId": "pos09",
+    "positionId": "pos9",
     "name": "板垣心和ポジ",
     "firstDayMember": "板垣心和",
     "experiencedMembers": ["田中雪乃", "松本海日菜"]
@@ -63,7 +63,7 @@
     "positionId": "pos11",
     "name": "宮本杏海ポジ",
     "firstDayMember": "宮本杏海",
-    "experiencedMembers": ["竹田京加", "田中美空", "中川朋香"]
+    "experiencedMembers": ["石山千尋", "竹田京加", "田中美空", "中川朋香"]
   },
   {
     "positionId": "pos12",
