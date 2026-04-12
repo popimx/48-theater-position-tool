@@ -1,54 +1,54 @@
 [
   {
-    "positionId": "pos1",
+    "positionId": "pos01",
     "name": "岡腰星来ポジ",
     "firstDayMember": "岡腰星来",
     "experiencedMembers": ["竹田京加"]
   },
   {
-    "positionId": "pos2",
+    "positionId": "pos02",
     "name": "三鴨くるみポジ",
     "firstDayMember": "三鴨くるみ",
-    "experiencedMembers": []
+    "experiencedMembers": ["中川朋香"]
   },
   {
-    "positionId": "pos3",
+    "positionId": "pos03",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
     "experiencedMembers": ["村井悠莉"]
   },
   {
-    "positionId": "pos4",
+    "positionId": "pos04",
     "name": "桜井ひまりポジ",
     "firstDayMember": "桜井ひまり",
     "experiencedMembers": []
   },
   {
-    "positionId": "pos5",
+    "positionId": "pos05",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
-    "experiencedMembers": []
+    "experiencedMembers": ["宮原心音"]
   },
   {
-    "positionId": "pos6",
+    "positionId": "pos06",
     "name": "赤松昊ポジ",
     "firstDayMember": "赤松昊",
     "experiencedMembers": []
   },
   {
-    "positionId": "pos7",
+    "positionId": "pos07",
     "name": "石山千尋ポジ",
     "firstDayMember": "石山千尋",
-    "experiencedMembers": []
+    "experiencedMembers": ["木根彩呂花"]
   },
   {
-    "positionId": "pos8",
+    "positionId": "pos08",
     "name": "高橋ことねポジ",
     "firstDayMember": "高橋ことね",
-    "experiencedMembers": []
+    "experiencedMembers": ["田中ミリア"]
   },
   {
-    "positionId": "pos9",
+    "positionId": "pos09",
     "name": "村井悠莉ポジ",
     "firstDayMember": "村井悠莉",
     "experiencedMembers": ["宮原心音"]
@@ -75,13 +75,13 @@
     "positionId": "pos13",
     "name": "内田愛彩ポジ",
     "firstDayMember": "内田愛彩",
-    "experiencedMembers": []
+    "experiencedMembers": ["宮崎紗衣"]
   },
   {
     "positionId": "pos14",
     "name": "木根彩呂花ポジ",
     "firstDayMember": "木根彩呂花",
-    "experiencedMembers": []
+    "experiencedMembers": ["西住美咲妃"]
   },
   {
     "positionId": "pos15",
@@ -93,6 +93,6 @@
     "positionId": "pos16",
     "name": "和田承子ポジ",
     "firstDayMember": "和田承子",
-    "experiencedMembers": []
+    "experiencedMembers": ["藪内陽花"]
   }
 ]
