@@ -1,75 +1,75 @@
 [
   {
-    "positionId": "pos01",
+    "positionId": "pos1",
     "name": "岡腰星来ポジ",
     "firstDayMember": "岡腰星来",
     "experiencedMembers": ["竹田京加"]
   },
   {
-    "positionId": "pos02",
+    "positionId": "pos2",
     "name": "三鴨くるみポジ",
     "firstDayMember": "三鴨くるみ",
-    "experiencedMembers": ["中川朋香"]
+    "experiencedMembers": ["中川朋香", "村井悠莉"]
   },
   {
-    "positionId": "pos03",
+    "positionId": "pos3",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
     "experiencedMembers": ["村井悠莉"]
   },
   {
-    "positionId": "pos04",
+    "positionId": "pos4",
     "name": "桜井ひまりポジ",
     "firstDayMember": "桜井ひまり",
-    "experiencedMembers": []
+    "experiencedMembers": ["中川朋香"]
   },
   {
-    "positionId": "pos05",
+    "positionId": "pos5",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
     "experiencedMembers": ["宮原心音"]
   },
   {
-    "positionId": "pos06",
+    "positionId": "pos6",
     "name": "赤松昊ポジ",
     "firstDayMember": "赤松昊",
     "experiencedMembers": []
   },
   {
-    "positionId": "pos07",
+    "positionId": "pos7",
     "name": "石山千尋ポジ",
     "firstDayMember": "石山千尋",
     "experiencedMembers": ["木根彩呂花"]
   },
   {
-    "positionId": "pos08",
+    "positionId": "pos8",
     "name": "高橋ことねポジ",
     "firstDayMember": "高橋ことね",
     "experiencedMembers": ["田中ミリア"]
   },
   {
-    "positionId": "pos09",
+    "positionId": "pos9",
     "name": "村井悠莉ポジ",
     "firstDayMember": "村井悠莉",
-    "experiencedMembers": ["宮原心音"]
+    "experiencedMembers": ["宮原心音", "和田承子"]
   },
   {
     "positionId": "pos10",
     "name": "田中れいポジ",
     "firstDayMember": "田中れい",
-    "experiencedMembers": []
+    "experiencedMembers": ["善家侑莉花"]
   },
   {
     "positionId": "pos11",
     "name": "谷口詩乃ポジ",
     "firstDayMember": "谷口詩乃",
-    "experiencedMembers": []
+    "experiencedMembers": ["内田愛彩"]
   },
   {
     "positionId": "pos12",
     "name": "宮原心音ポジ",
     "firstDayMember": "宮原心音",
-    "experiencedMembers": ["山口美桜"]
+    "experiencedMembers": ["宮崎紗衣", "山口美桜", "高橋樹奈"]
   },
   {
     "positionId": "pos13",
@@ -87,7 +87,7 @@
     "positionId": "pos15",
     "name": "高橋樹奈ポジ",
     "firstDayMember": "高橋樹奈",
-    "experiencedMembers": ["善家侑莉花"]
+    "experiencedMembers": ["善家侑莉花", "福原琴美"]
   },
   {
     "positionId": "pos16",
