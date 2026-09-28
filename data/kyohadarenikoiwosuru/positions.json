@@ -1,0 +1,98 @@
+[
+  {
+    "positionId": "pos01",
+    "name": "岩立沙穂ポジ",
+    "firstDayMember": "岩立沙穂",
+    "experiencedMembers": ["秋山由奈", "正鋳真優"]
+  },
+  {
+    "positionId": "pos02",
+    "name": "大盛真歩ポジ",
+    "firstDayMember": "大盛真歩",
+    "experiencedMembers": ["平田侑希", "行天優莉奈"]
+  },
+  {
+    "positionId": "pos03",
+    "name": "小栗有以ポジ",
+    "firstDayMember": "小栗有以",
+    "experiencedMembers": ["鈴木くるみ", "山﨑空"]
+  },
+  {
+    "positionId": "pos04",
+    "name": "倉野尾成美ポジ",
+    "firstDayMember": "倉野尾成美",
+    "experiencedMembers": ["佐藤綺星", "下尾みう", "成田香姫奈", "向井地美音"]
+  },
+  {
+    "positionId": "pos05",
+    "name": "下尾みうポジ",
+    "firstDayMember": "下尾みう",
+    "experiencedMembers": ["福岡聖菜", "谷口めぐ"]
+  },
+  {
+    "positionId": "pos06",
+    "name": "鈴木くるみポジ",
+    "firstDayMember": "鈴木くるみ",
+    "experiencedMembers": ["新井彩永", "布袋百椛"]
+  },
+  {
+    "positionId": "pos07",
+    "name": "田口愛佳ポジ",
+    "firstDayMember": "田口愛佳",
+    "experiencedMembers": ["工藤華純", "岡部麟"]
+  },
+  {
+    "positionId": "pos08",
+    "name": "千葉恵里ポジ",
+    "firstDayMember": "千葉恵里",
+    "experiencedMembers": ["迫由芽実", "八木愛月"]
+  },
+  {
+    "positionId": "pos09",
+    "name": "徳永羚海ポジ",
+    "firstDayMember": "徳永羚海",
+    "experiencedMembers": ["橋本恵理子", "佐藤美波"]
+  },
+  {
+    "positionId": "pos10",
+    "name": "長友彩海ポジ",
+    "firstDayMember": "長友彩海",
+    "experiencedMembers": ["太田有紀", "髙橋彩音"]
+  },
+  {
+    "positionId": "pos11",
+    "name": "永野芹佳ポジ",
+    "firstDayMember": "永野芹佳",
+    "experiencedMembers": ["坂川陽香"]
+  },
+  {
+    "positionId": "pos12",
+    "name": "向井地美音ポジ",
+    "firstDayMember": "向井地美音",
+    "experiencedMembers": ["髙橋彩音", "橋本陽菜", "山口結愛"]
+  },
+  {
+    "positionId": "pos13",
+    "name": "武藤小麟ポジ",
+    "firstDayMember": "武藤小麟",
+    "experiencedMembers": ["橋本陽菜"]
+  },
+  {
+    "positionId": "pos14",
+    "name": "村山彩希ポジ",
+    "firstDayMember": "村山彩希",
+    "experiencedMembers": ["正鋳真優"]
+  },
+  {
+    "positionId": "pos15",
+    "name": "山内瑞葵ポジ",
+    "firstDayMember": "山内瑞葵",
+    "experiencedMembers": ["永野芹佳", "水島美結", "黒須遥香"]
+  },
+  {
+    "positionId": "pos16",
+    "name": "山根涼羽ポジ",
+    "firstDayMember": "山根涼羽",
+    "experiencedMembers": ["久保姫菜乃", "鈴木くるみ", "畠山希美", "込山榛香"]
+  }
+]
