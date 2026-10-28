@@ -27,13 +27,13 @@
     "positionId": "pos05",
     "name": "坂下真心ポジ",
     "firstDayMember": "坂下真心",
-    "experiencedMembers": ["池田典愛", "坂本理紗", "塩月希依音", "宮本杏海"]
+    "experiencedMembers": ["池田典愛", "塩月希依音", "松本海日菜", "宮本杏海", "坂本理紗"]
   },
   {
     "positionId": "pos06",
     "name": "平山真衣ポジ",
     "firstDayMember": "平山真衣",
-    "experiencedMembers": ["板垣心和", "村井悠莉"]
+    "experiencedMembers": ["板垣心和", "中川朋香", "村井悠莉"]
   },
   {
     "positionId": "pos07",
@@ -45,19 +45,19 @@
     "positionId": "pos08",
     "name": "池田典愛ポジ",
     "firstDayMember": "池田典愛",
-    "experiencedMembers": ["西田帆花", "宮原心音", "青原和花"]
+    "experiencedMembers": ["池帆乃香", "西田帆花", "宮原心音", "村井悠莉", "青原和花", "吉見純音"]
   },
   {
     "positionId": "pos09",
     "name": "板垣心和ポジ",
     "firstDayMember": "板垣心和",
-    "experiencedMembers": ["石山千尋", "中川朋香", "松本海日菜", "田中雪乃"]
+    "experiencedMembers": ["石山千尋", "田中美空", "中川朋香", "松本海日菜", "田中雪乃"]
   },
   {
     "positionId": "pos10",
     "name": "松岡さくらポジ",
     "firstDayMember": "松岡さくら",
-    "experiencedMembers": ["竹田京加", "中川朋香", "吉見純音", "青原和花"]
+    "experiencedMembers": ["竹田京加", "中川朋香", "青原和花", "吉見純音"]
   },
   {
     "positionId": "pos11",
@@ -69,30 +69,30 @@
     "positionId": "pos12",
     "name": "西田帆花ポジ",
     "firstDayMember": "西田帆花",
-    "experiencedMembers": ["衣笠彩実", "宮原心音", "吉見純音"]
+    "experiencedMembers": ["衣笠彩実", "田中ミリア", "宮原心音", "吉見純音"]
   },
   {
     "positionId": "pos13",
     "name": "松本海日菜ポジ",
     "firstDayMember": "松本海日菜",
-    "experiencedMembers": ["山口美桜"]
+    "experiencedMembers": ["山口美桜", "高橋樹奈"]
   },
   {
     "positionId": "pos14",
     "name": "西島梨央ポジ",
     "firstDayMember": "西島梨央",
-    "experiencedMembers": ["木根彩呂花", "竹田京加"]
+    "experiencedMembers": ["木根彩呂花", "竹田京加", "赤松昊"]
   },
   {
     "positionId": "pos15",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
-    "experiencedMembers": ["衣笠彩実", "新澤菜央", "村井悠莉", "宮崎紗衣"]
+    "experiencedMembers": ["衣笠彩実", "新澤菜央", "宮崎紗衣", "村井悠莉", "善家侑莉花"]
   },
   {
     "positionId": "pos16",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
-    "experiencedMembers": ["田中ミリア", "宮原心音", "青原和花"]
+    "experiencedMembers": ["田中ミリア", "宮原心音", "西住美咲妃", "青原和花"]
   }
 ]
