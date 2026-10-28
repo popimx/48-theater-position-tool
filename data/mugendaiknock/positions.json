@@ -1,57 +1,57 @@
 [
   {
-    "positionId": "pos1",
+    "positionId": "pos01",
     "name": "岡腰星来ポジ",
     "firstDayMember": "岡腰星来",
-    "experiencedMembers": ["竹田京加"]
+    "experiencedMembers": ["竹田京加", "中川朋香"]
   },
   {
-    "positionId": "pos2",
+    "positionId": "pos02",
     "name": "三鴨くるみポジ",
     "firstDayMember": "三鴨くるみ",
     "experiencedMembers": ["中川朋香", "村井悠莉"]
   },
   {
-    "positionId": "pos3",
+    "positionId": "pos03",
     "name": "竹田京加ポジ",
     "firstDayMember": "竹田京加",
-    "experiencedMembers": ["村井悠莉"]
+    "experiencedMembers": ["石山千尋", "内田愛彩", "村井悠莉"]
   },
   {
-    "positionId": "pos4",
+    "positionId": "pos04",
     "name": "桜井ひまりポジ",
     "firstDayMember": "桜井ひまり",
-    "experiencedMembers": ["中川朋香"]
+    "experiencedMembers": ["内田愛彩", "中川朋香"]
   },
   {
-    "positionId": "pos5",
+    "positionId": "pos05",
     "name": "中川朋香ポジ",
     "firstDayMember": "中川朋香",
-    "experiencedMembers": ["宮原心音"]
+    "experiencedMembers": ["田中ミリア", "宮原心音"]
   },
   {
-    "positionId": "pos6",
+    "positionId": "pos06",
     "name": "赤松昊ポジ",
     "firstDayMember": "赤松昊",
-    "experiencedMembers": []
+    "experiencedMembers": ["宮崎紗衣"]
   },
   {
-    "positionId": "pos7",
+    "positionId": "pos07",
     "name": "石山千尋ポジ",
     "firstDayMember": "石山千尋",
-    "experiencedMembers": ["木根彩呂花"]
+    "experiencedMembers": ["木根彩呂花", "高橋樹奈"]
   },
   {
-    "positionId": "pos8",
+    "positionId": "pos08",
     "name": "高橋ことねポジ",
     "firstDayMember": "高橋ことね",
-    "experiencedMembers": ["田中ミリア"]
+    "experiencedMembers": ["田中ミリア", "山口美桜"]
   },
   {
-    "positionId": "pos9",
+    "positionId": "pos09",
     "name": "村井悠莉ポジ",
     "firstDayMember": "村井悠莉",
-    "experiencedMembers": ["宮原心音", "和田承子"]
+    "experiencedMembers": ["宮原心音", "西住美咲妃", "和田承子"]
   },
   {
     "positionId": "pos10",
@@ -63,7 +63,7 @@
     "positionId": "pos11",
     "name": "谷口詩乃ポジ",
     "firstDayMember": "谷口詩乃",
-    "experiencedMembers": ["内田愛彩"]
+    "experiencedMembers": ["内田愛彩", "村井悠莉", "山口美桜"]
   },
   {
     "positionId": "pos12",
@@ -75,7 +75,7 @@
     "positionId": "pos13",
     "name": "内田愛彩ポジ",
     "firstDayMember": "内田愛彩",
-    "experiencedMembers": ["宮崎紗衣"]
+    "experiencedMembers": ["宮崎紗衣", "藪内陽花"]
   },
   {
     "positionId": "pos14",
@@ -93,6 +93,6 @@
     "positionId": "pos16",
     "name": "和田承子ポジ",
     "firstDayMember": "和田承子",
-    "experiencedMembers": ["藪内陽花"]
+    "experiencedMembers": ["澁谷愛紗南", "藪内陽花"]
   }
 ]
